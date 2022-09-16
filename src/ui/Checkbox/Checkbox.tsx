@@ -4,7 +4,7 @@ import styles from "./Checkbox.scss";
 const cn = classNames.bind(styles);
 
 type TCheckbox = {
-  className: string;
+  className?: string;
   handlClick: () => void;
   other: HTMLInputElement;
   isDarkTheme?: boolean;
