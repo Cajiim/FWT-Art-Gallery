@@ -1,0 +1,23 @@
+.label {
+  display: flex;
+  width: 106px;
+  height: 33px;
+  background: rgba(18, 18, 18, 0.05);
+  border-radius: 30px;
+
+  /* Paragraph small/medium 12 */
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  /* primary/dark gray */
+  color: #575757;
+
+  &_dark {
+    background: rgba(205, 205, 205, 0.05);
+    /* primary/white */
+    border: 1px solid #ffffff;
+    /* primary/light gray */
+    color: #dedede;
+  }
+}

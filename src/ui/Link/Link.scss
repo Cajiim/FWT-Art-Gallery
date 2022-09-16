@@ -1,0 +1,21 @@
+.link {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  /* primary/dark gray */
+  color: #575757;
+
+  &:hover {
+    /* primary/black */
+    color: #121212;
+  }
+  &_dark {
+    /* primary/light gray */
+    color: #dedede;
+    &:hover {
+      /* primary/white */
+      color: #ffffff;
+    }
+  }
+}

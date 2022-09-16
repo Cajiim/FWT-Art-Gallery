@@ -1,0 +1,12 @@
+.cardGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  height: 100%;
+  max-width: 1240px;
+  margin: 0 100px 0 100px;
+}
+
+.cardGrid__item {
+  aspect-ratio: 392/260;
+}

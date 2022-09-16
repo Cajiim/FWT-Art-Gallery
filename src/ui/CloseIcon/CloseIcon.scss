@@ -1,0 +1,11 @@
+.closeIcon {
+  width: 8px;
+  height: 8px;
+  /* primary/dark gray */
+  background: #575757;
+
+  &_dark {
+    /* primary/light gray */
+    background: #dedede;
+  }
+}

@@ -1,0 +1,58 @@
+.input {
+  width: 340px;
+  height: 46px;
+
+  /* primary/white */
+  background: #ffffff;
+  /* primary/light gray */
+  border: 1px solid #dedede;
+  border-radius: 4px;
+
+  /* Paragraph base/light 16 */
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 140%;
+  /* or 22px */
+  /* primary/dark gray */
+  color: #575757;
+
+  &::placeholder {
+    /* Paragraph base/light 16 */
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    /* or 22px */
+    /* secondary/gray */
+    color: #9c9c9c;
+  }
+
+  &:hover {
+    /* secondary/gray */
+    border-color: #9c9c9c;
+  }
+  &:focus {
+    /* primary/dark gray */
+    border-color: #575757;
+  }
+  &_error {
+    border-color: #ae2917;
+  }
+
+  &_dark {
+    /* secondary/black */
+    background: #1a1818;
+    border-radius: 4px;
+
+    &:hover {
+      /* primary/dark gray */
+      border: 1px solid #575757;
+    }
+    &:focus {
+      /* primary/light gray */
+      border: 1px solid #dedede;
+    }
+  }
+}
