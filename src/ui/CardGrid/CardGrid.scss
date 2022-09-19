@@ -2,11 +2,31 @@
   display: flex;
   flex-wrap: wrap;
   gap: 32px;
-  height: 100%;
   max-width: 1240px;
   margin: 0 100px 0 100px;
+  height: 100%;
+
+  @media screen and (max-width: 1439px) {
+    margin: 0 20px 0 20px;
+  }
 }
 
 .cardGrid__item {
-  aspect-ratio: 392/260;
+  position: relative;
+  list-style: none;
+  width: 392px;
+  height: 260px;
+  overflow: hidden;
+  cursor:pointer;
+  
+
+  @media screen and (max-width: 1439px) {
+    height: auto;
+    width: calc(100% - 24px / 2);
+    aspect-ratio: 352/220;
+  }
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    aspect-ratio: 280/185;
+  }
 }

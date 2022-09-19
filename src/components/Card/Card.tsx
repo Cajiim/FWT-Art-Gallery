@@ -1,5 +1,6 @@
 import { FC } from "react";
 import classNames from "classnames";
+import { ReactComponent as CardArrow } from "../../assets/img/cardArrow.svg";
 import styles from "./Card.scss";
 const cn = classNames.bind(styles);
 
@@ -12,15 +13,15 @@ type TCard = {
 
 const Card: FC<TCard> = ({ name, img, year, isDarkTheme }) => {
   return (
-    <img src={img} alt="card__painting">
+    <div className="card">
       <div
         className={cn("card__curtain", {
           card__curtain_dark: isDarkTheme,
         })}
       >
         <span
-          className={cn("card__arrow", {
-            card__arrow_dark: isDarkTheme,
+          className={cn("card__band", {
+            card__band_dark: isDarkTheme,
           })}
         />
         <div>
@@ -39,8 +40,12 @@ const Card: FC<TCard> = ({ name, img, year, isDarkTheme }) => {
             {year}
           </p>
         </div>
+        <div className="card__rectangle">
+          <CardArrow className="card__arrow" />
+        </div>
       </div>
-    </img>
+      <img src={img} alt="painting" className="card__painting" />
+    </div>
   );
 };
 

@@ -1,6 +1,8 @@
 import { FC } from "react";
 import { Card } from "../../components/Card";
-type TCardGrid = {
+import "./CardGrid.scss";
+
+export type TCardGrid = {
   paintings: [
     {
       id: string;

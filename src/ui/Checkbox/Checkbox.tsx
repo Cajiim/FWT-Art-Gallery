@@ -3,7 +3,7 @@ import classNames from "classnames";
 import styles from "./Checkbox.scss";
 const cn = classNames.bind(styles);
 
-type TCheckbox = {
+export type TCheckbox = {
   className?: string;
   handlClick: () => void;
   other: HTMLInputElement;

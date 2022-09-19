@@ -19,8 +19,7 @@
       "project": "./tsconfig.json"
     },
     "plugins": ["import", "react", "@typescript-eslint"],
-    "rules": {
-      
+    "rules": {  
       "@typescript-eslint/explicit-function-return-type": "off",
       "@typescript-eslint/explicit-module-boundary-types": "off",
       "@typescript-eslint/no-explicit-any": "error",
@@ -43,7 +42,17 @@
       ],
       "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
       "react-hooks/exhaustive-deps": "warn",
-      "react/jsx-closing-bracket-location": 0
+      "react/jsx-closing-bracket-location": 0,
+      "import/no-extraneous-dependencies": [
+        "error",
+        {
+          "devDependencies": [
+            "**/*.stories.*",
+            "**/.storybook/**/*.*"
+          ],
+          "peerDependencies": true
+        }
+      ]
     },
     "overrides": [
       {
