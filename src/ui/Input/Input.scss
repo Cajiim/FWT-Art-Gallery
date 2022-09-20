@@ -1,22 +1,20 @@
 .input {
   width: 340px;
   height: 46px;
-
-  /* primary/white */
-  background: #ffffff;
-  /* primary/light gray */
-  border: 1px solid #dedede;
+  outline: none;
+  box-sizing: border-box;
+  padding: 0 0 0 16px;
+  background: var(--primary-white);
+  border: 1px solid var(--primary-light-gray);
   border-radius: 4px;
-
+  box-sizing: border-box;
   /* Paragraph base/light 16 */
   font-family: "Inter";
   font-style: normal;
   font-weight: 300;
   font-size: 16px;
-  line-height: 140%;
-  /* or 22px */
-  /* primary/dark gray */
-  color: #575757;
+  line-height: 22px;
+  color: var(--primary-dark-gray);
 
   &::placeholder {
     /* Paragraph base/light 16 */
@@ -24,35 +22,45 @@
     font-style: normal;
     font-weight: 300;
     font-size: 16px;
-    /* or 22px */
-    /* secondary/gray */
-    color: #9c9c9c;
+    color: var(--secondary-gray);
   }
 
   &:hover {
-    /* secondary/gray */
-    border-color: #9c9c9c;
+    border-color: var(--secondary-gray);
   }
   &:focus {
-    /* primary/dark gray */
-    border-color: #575757;
+    border-color: var(--primary-dark-gray);
   }
   &_error {
-    border-color: #ae2917;
-  }
-
-  &_dark {
-    /* secondary/black */
-    background: #1a1818;
-    border-radius: 4px;
-
+    border-color: var(--accent-error);
     &:hover {
-      /* primary/dark gray */
-      border: 1px solid #575757;
+      border-color: var(--accent-error);
     }
     &:focus {
-      /* primary/light gray */
-      border: 1px solid #dedede;
+      border-color: var(--accent-error);
+    }
+  }
+  &_dark {
+    background: var(--secondary-black);
+    border-radius: 4px;
+    border: 1px solid var(--secondary-black);
+    color: var(--primary-light-gray);
+
+    &:hover {
+      border: 1px solid var(--primary-dark-gray);
+    }
+    &:focus {
+      border: 1px solid var(--primary-light-gray);
+    }
+
+    &_error {
+      border: 1px solid var(--accent-error);
+      &:hover {
+        border: 1px solid var(--accent-error);
+      }
+      &:focus {
+        border: 1px solid var(--accent-error);
+      }
     }
   }
 }

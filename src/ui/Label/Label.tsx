@@ -4,16 +4,21 @@ import classNames from "classnames";
 import styles from "./Label.scss";
 const cn = classNames.bind(styles);
 
-type TLabel = {
+export type TLabel = {
   children: string;
   className: string;
   other: HTMLAnchorElement;
   isDarkTheme?: boolean;
+  isVisible?: boolean;
 };
 
 const Label: FC<TLabel> = ({ children, className, ...other }) => {
   return (
-    <div className="label">
+    <label
+      className={cn("label", className, {
+        label_dark: other.isDarkTheme,
+      })}
+    >
       <p
         className={cn("label__text", className, {
           label__text_dark: other.isDarkTheme,
@@ -21,8 +26,8 @@ const Label: FC<TLabel> = ({ children, className, ...other }) => {
       >
         {children}
       </p>
-      <CloseIcon isDarkTheme={other.isDarkTheme} />
-    </div>
+      <CloseIcon isDarkTheme={other.isDarkTheme} isVisible={other.isVisible} />
+    </label>
   );
 };
 

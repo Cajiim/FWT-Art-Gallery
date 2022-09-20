@@ -6,27 +6,26 @@
   margin: 0 100px 0 100px;
   height: 100%;
 
-  @media screen and (max-width: 1439px) {
+  @include for-tablet-up {
     margin: 0 20px 0 20px;
   }
-}
 
-.cardGrid__item {
-  position: relative;
-  list-style: none;
-  width: 392px;
-  height: 260px;
-  overflow: hidden;
-  cursor:pointer;
-  
+  &__item {
+    position: relative;
+    list-style: none;
+    width: 392px;
+    height: 260px;
+    overflow: hidden;
+    cursor: pointer;
 
-  @media screen and (max-width: 1439px) {
-    height: auto;
-    width: calc(100% - 24px / 2);
-    aspect-ratio: 352/220;
-  }
-  @media screen and (max-width: 767px) {
-    width: 100%;
-    aspect-ratio: 280/185;
+    @include for-tablet-up {
+      height: auto;
+      width: calc(100% - 24px / 2);
+      aspect-ratio: 352/220;
+    }
+    @include for-mobile-up {
+      width: 100%;
+      aspect-ratio: 280/185;
+    }
   }
 }

@@ -7,13 +7,15 @@ const cn = classNames.bind(styles);
 type TCloseIcon = {
   isDarkTheme?: boolean;
   className?: string;
+  isVisible?: boolean;
 };
 
-const CloseIcon: FC<TCloseIcon> = ({ isDarkTheme, className }) => {
+const CloseIcon: FC<TCloseIcon> = ({ isDarkTheme, className, isVisible }) => {
   return (
     <div
       className={cn("closeIcon", className, {
         closeIcon_dark: isDarkTheme,
+        closeIcon_visible: isVisible,
       })}
     >
       <Close />

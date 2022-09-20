@@ -1,9 +1,16 @@
 .button {
   width: 200px;
   height: 47px;
-  background: #121212;
+  background: var(--primary-black);
   border-radius: 30px;
   border: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: var(--primary-white);
 
   &:hover {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
@@ -15,21 +22,8 @@
     opacity: 0.5;
     pointer-events: none;
   }
-
-  //Заменить переменными
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 15px;
-  /* identical to box height */
-  text-transform: uppercase;
-  /* primary/white */
-  color: #ffffff;
-
   &_dark {
-    /* accent/gold */
-    background: #ab8956;
+    background: var(--accent-gold);
     &:hover {
       box-shadow: 0px 4px 10px rgba(171, 137, 86, 0.25);
     }
@@ -37,42 +31,32 @@
       background: #ba9052;
     }
   }
-
   &_outlined {
     background: none;
-    /* primary/dark gray */
     text-decoration: underline;
-    color: #575757;
+    color: var(--primary-dark-gray);
 
     &:hover {
-      /* primary/black */
-      color: #121212;
+      color: var(--primary-black);
       box-shadow: none;
     }
     &:focus {
-      /* primary/black */
-      color: #121212;
+      color: var(--primary-black);
       background: none;
     }
     &:disabled {
-      /* primary/light gray */
-      color: #dedede;
+      color: var(--primary-light-gray);
     }
-
     &_dark {
-      /* primary/light gray */
-      color: #dedede;
+      color: var(--primary-light-gray);
       &:hover {
-        /* primary/white */
-        color: #ffffff;
+        color: var(--primary-white);
       }
       &:focus {
-        /* primary/white */
-        color: #ffffff;
+        color: var(--primary-white);
       }
       &:disabled {
-        /* secondary/gray */
-        color: #9c9c9c;
+        color: var(--secondary-gray);
       }
     }
   }

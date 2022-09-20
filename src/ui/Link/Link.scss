@@ -3,19 +3,21 @@
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
-  /* primary/dark gray */
-  color: #575757;
+
+  color: var(--primary-dark-gray);
+  text-decoration: none;
+  border-bottom: 1px solid var(--primary-dark-gray);
 
   &:hover {
-    /* primary/black */
-    color: #121212;
+    color: var(--primary-black);
+    border-color: #121212;
   }
   &_dark {
-    /* primary/light gray */
-    color: #dedede;
+    color: var(--primary-light-gray);
+    border-color: var(--primary-light-gray);
     &:hover {
-      /* primary/white */
-      color: #ffffff;
+      color: var(--primary-white);
+      border-color: var(--primary-white);
     }
   }
 }

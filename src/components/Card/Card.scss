@@ -1,126 +1,114 @@
 .card {
-  /* display: flex; */
-}
+  &__painting {
+    width: 392px;
+    height: 260px;
+    transition: all ease-out 0.5s;
 
-.card__painting {
-  width: 392px;
-  height: 260px;
-  transition: all ease-out 0.5s;
+    &:hover {
+      transform: scale(1.2);
+    }
 
-  &:hover {
-    transform: scale(1.2);
+    @include for-tablet-up {
+      height: auto;
+      width: 100%;
+      aspect-ratio: 352/220;
+    }
+    @include for-mobile-up {
+      aspect-ratio: 280/185;
+    }
   }
 
-  @media screen and (max-width: 1439px) {
-    height: auto;
-    width: 100%;
-    aspect-ratio: 352/220;
-  }
-  @media screen and (max-width: 767px) {
-    aspect-ratio: 280/185;
-  }
-}
-
-.card__curtain {
-  z-index: 1;
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  position: absolute;
-  bottom: 0px;
-  width: 300px;
-  height: 82px;
-  /* primary/black */
-  background: #121212;
-  animation-fill-mode: none, backwards;
-
-  &:hover + .card__painting {
-    transform: scale(1.2);
-  }
-
-  &_dark {
-    /* primary/white */
-    background: #ffffff;
-  }
-
-  @media screen and (max-width: 1439px) {
-    height: auto;
-    width: 300px;
-    aspect-ratio: 300/66;
-  }
-  @media screen and (max-width: 767px) {
-    aspect-ratio: 236/45;
-  }
-}
-
-.card__band {
-  /* accent/gold */
-  border-left: 2px solid #ab8956;
-  height: 42px;
-  display: block;
-  &_dark {
-    border-color: #9b4b4b;
-  }
-
-  @media screen and (max-width: 1439px) {
-    display: none;
-  }
-}
-
-.card__name {
-  /* Heading/H4 medium 16 uppercase */
-  font-family: "Cormorant SC";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
-  text-transform: uppercase;
-  /* primary/white */
-  color: #ffffff;
-
-  &_dark {
-    /* primary/black */
-    color: #121212;
-  }
-  @media screen and (max-width: 1439px) {
-    margin: 0 0 0 12px;
-  }
-}
-
-.card__year {
-  /* Button/bold 12 uppercase */
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 15px;
-  /* identical to box height */
-  text-transform: uppercase;
-  /* accent/gold */
-  color: #ab8956;
-
-  &_dark {
-    /* accent/red */
-    color: #9b4b4b;
-  }
-
-  @media screen and (max-width: 1439px) {
-    margin: 0 0 0 12px;
-  }
-}
-
-.card__rectangle {
-  display: none;
-  background: #ab8956;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  height: auto;
-  width: 24px;
-  aspect-ratio: 24/66;
-  right: -53px;
-
-  @media screen and (max-width: 1439px) {
+  &__curtain {
+    z-index: 1;
     display: flex;
+    gap: 20px;
+    align-items: center;
+    position: absolute;
+    bottom: 0px;
+    width: 300px;
+    height: 82px;
+    background: var(--primary-black);
+    animation-fill-mode: none, backwards;
+
+    &:hover + .card__painting {
+      transform: scale(1.2);
+    }
+
+    &_dark {
+      background: var(--primary-white);
+    }
+
+    @include for-tablet-up {
+      height: auto;
+      width: 300px;
+      aspect-ratio: 300/66;
+    }
+    @include for-mobile-up {
+      aspect-ratio: 236/45;
+    }
+  }
+
+  &__band {
+    border-left: 2px solid var(--accent-gold);
+    height: 42px;
+    display: block;
+    &_dark {
+      border-color: var(--accent-red);
+    }
+
+    @include for-tablet-up {
+      display: none;
+    }
+  }
+
+  &__name {
+    font-family: "Cormorant SC";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: var(--primary-white);
+
+    &_dark {
+      color: var(--primary-black);
+    }
+    @include for-tablet-up {
+      margin: 0 0 0 12px;
+    }
+  }
+
+  &__year {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+
+    &_dark {
+      color: var(--accent-red);
+    }
+
+    @include for-tablet-up {
+      margin: 0 0 0 12px;
+    }
+  }
+
+  &__rectangle {
+    display: none;
+    background: var(--accent-gold);
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: auto;
+    width: 24px;
+    aspect-ratio: 24/66;
+    right: -53px;
+
+    @include for-tablet-up {
+      display: flex;
+    }
   }
 }

@@ -3,7 +3,7 @@ import classNames from "classnames";
 import styles from "./Link.scss";
 const cn = classNames.bind(styles);
 
-type TLink = {
+export type TLink = {
   link: string;
   children: string;
   other: HTMLAnchorElement;

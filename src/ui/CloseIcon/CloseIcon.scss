@@ -1,11 +1,15 @@
 .closeIcon {
+  position: relative;
   width: 8px;
   height: 8px;
-  /* primary/dark gray */
-  background: #575757;
+  fill: var(--primary-dark-gray);
+  display: none;
+  padding: 0 0 4px 0;
 
   &_dark {
-    /* primary/light gray */
-    background: #dedede;
+    fill: var(--primary-light-gray);
+  }
+  &_visible {
+    display: block;
   }
 }

@@ -1,0 +1,12 @@
+:root {
+  @mixin for-tablet-up {
+    @media screen and (max-width: 1439px) {
+      @content;
+    }
+  }
+  @mixin for-mobile-up {
+    @media screen and (max-width: 767px) {
+        @content;
+      }
+  }
+}

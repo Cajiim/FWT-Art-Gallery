@@ -1,23 +1,27 @@
 .label {
   display: flex;
-  width: 106px;
-  height: 33px;
+  max-width: 106px;
+  max-height: 33px;
+  width: auto;
+  height: auto;
   background: rgba(18, 18, 18, 0.05);
   border-radius: 30px;
-
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   /* Paragraph small/medium 12 */
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
-  /* primary/dark gray */
-  color: #575757;
+  color: var(--primary-dark-gray);
 
   &_dark {
     background: rgba(205, 205, 205, 0.05);
-    /* primary/white */
-    border: 1px solid #ffffff;
-    /* primary/light gray */
-    color: #dedede;
+    border: 1px solid var(--primary-white);
+  }
+  &__text_dark {
+    color: var(--primary-light-gray);
   }
 }
