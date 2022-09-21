@@ -18,7 +18,6 @@
     &:hover {
       transform: scale(1.2);
     }
-
     @include for-tablet-up {
       height: auto;
       width: 100%;
@@ -28,7 +27,6 @@
       aspect-ratio: 280/185;
     }
   }
-
   &__curtain {
     z-index: 1;
     display: flex;
@@ -44,11 +42,9 @@
     &:hover + .card__painting {
       transform: scale(1.2);
     }
-
     &_dark {
       background: var(--primary-white);
     }
-
     @include for-tablet-up {
       height: auto;
       width: 300px;
@@ -58,7 +54,6 @@
       aspect-ratio: 236/45;
     }
   }
-
   &__band {
     border-left: 2px solid var(--accent-gold);
     height: 42px;
@@ -66,12 +61,10 @@
     &_dark {
       border-color: var(--accent-red);
     }
-
     @include for-tablet-up {
       display: none;
     }
   }
-
   &__name {
     font-family: "Cormorant SC";
     font-style: normal;
@@ -88,7 +81,6 @@
       margin: 0 0 0 12px;
     }
   }
-
   &__year {
     font-family: "Inter";
     font-style: normal;
@@ -101,12 +93,10 @@
     &_dark {
       color: var(--accent-red);
     }
-
     @include for-tablet-up {
       margin: 0 0 0 12px;
     }
   }
-
   &__rectangle {
     display: none;
     background: var(--accent-gold);
@@ -121,7 +111,6 @@
     &_dark {
       background: var(--accent-red);
     }
-
     @include for-tablet-up {
       display: flex;
     }

@@ -18,4 +18,5 @@ InputComponent.args = {
   isDarkTheme: false,
   isError: false,
   placeholder: "Placeholder",
+  errorMessage: "Error message",
 };

@@ -51,3 +51,8 @@ export type TLink = {
   isDarkTheme?: boolean;
   className?: string;
 };
+
+export type TToast = {
+  children: string;
+  isDarkTheme?: boolean;
+};
