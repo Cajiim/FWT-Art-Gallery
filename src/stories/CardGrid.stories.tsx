@@ -1,5 +1,6 @@
 import { CardGrid } from "../ui/CardGrid";
-import type { TCardGrid } from "../ui/CardGrid/CardGrid";
+import type { TCardGrid } from "../types";
+import "../styles/breakpoints/breakpoints.scss";
 // eslint-disable-next-line import/named
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 

@@ -1,15 +1,8 @@
 import { FC } from "react";
+import type { TLink } from "../../types";
 import classNames from "classnames";
 import styles from "./Link.scss";
 const cn = classNames.bind(styles);
-
-export type TLink = {
-  link: string;
-  children: string;
-  other: HTMLAnchorElement;
-  isDarkTheme?: boolean;
-  className?: string;
-};
 
 const Link: FC<TLink> = ({ link, children, ...other }) => {
   return (

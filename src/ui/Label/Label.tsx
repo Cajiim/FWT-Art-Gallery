@@ -1,16 +1,9 @@
 import { FC } from "react";
+import type { TLabel } from "../../types";
 import { CloseIcon } from "../CloseIcon";
 import classNames from "classnames";
 import styles from "./Label.scss";
 const cn = classNames.bind(styles);
-
-export type TLabel = {
-  children: string;
-  className: string;
-  other: HTMLAnchorElement;
-  isDarkTheme?: boolean;
-  isVisible?: boolean;
-};
 
 const Label: FC<TLabel> = ({ children, className, ...other }) => {
   return (

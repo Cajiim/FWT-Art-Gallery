@@ -1,4 +1,15 @@
 .card {
+  @mixin for-tablet-up {
+    @media screen and (max-width: 1439px) {
+      @content;
+    }
+  }
+  @mixin for-mobile-up {
+    @media screen and (max-width: 767px) {
+      @content;
+    }
+  }
+
   &__painting {
     width: 392px;
     height: 260px;
@@ -106,6 +117,10 @@
     width: 24px;
     aspect-ratio: 24/66;
     right: -53px;
+
+    &_dark {
+      background: var(--accent-red);
+    }
 
     @include for-tablet-up {
       display: flex;

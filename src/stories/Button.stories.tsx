@@ -1,5 +1,6 @@
 import { Button } from "../ui/Button";
-import type { TButton } from "../ui/Button/Button";
+import type { TButton } from "../types";
+import "../styles/colors/colors.scss";
 // eslint-disable-next-line import/named
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 

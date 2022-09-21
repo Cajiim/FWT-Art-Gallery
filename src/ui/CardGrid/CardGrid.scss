@@ -1,4 +1,15 @@
 .cardGrid {
+  @mixin for-tablet-up {
+    @media screen and (max-width: 1439px) {
+      @content;
+    }
+  }
+  @mixin for-mobile-up {
+    @media screen and (max-width: 767px) {
+      @content;
+    }
+  } 
+
   display: flex;
   flex-wrap: wrap;
   gap: 32px;

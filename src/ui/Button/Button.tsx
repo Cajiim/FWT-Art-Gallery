@@ -1,17 +1,8 @@
 import { FC } from "react";
+import type { TButton } from "../../types";
 import classNames from "classnames";
 import styles from "./Button.scss";
 const cn = classNames.bind(styles);
-
-export type TButton = {
-  className: string;
-  children: string;
-  onClick: () => void;
-  isDisabled?: boolean;
-  isOutlined?: boolean;
-  isDarkTheme?: boolean;
-  other: HTMLButtonElement;
-};
 
 const Button: FC<TButton> = ({ className, children, onClick, ...other }) => {
   return (

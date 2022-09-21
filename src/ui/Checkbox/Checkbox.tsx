@@ -1,14 +1,8 @@
 import { FC, useState } from "react";
+import type { TCheckbox } from "../../types";
 import classNames from "classnames";
 import styles from "./Checkbox.scss";
 const cn = classNames.bind(styles);
-
-export type TCheckbox = {
-  className?: string;
-  id?: string;
-  other?: HTMLInputElement;
-  isDarkTheme?: boolean;
-};
 
 const Checkbox: FC<TCheckbox> = ({ className, id, ...other }) => {
   const [value, setValue] = useState<boolean>(true);

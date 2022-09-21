@@ -1,5 +1,5 @@
 import { Input } from "../ui/Input";
-import type { TInput } from "../ui/Input/Input";
+import type { TInput } from "../types";
 // eslint-disable-next-line import/named, import/no-extraneous-dependencies
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 

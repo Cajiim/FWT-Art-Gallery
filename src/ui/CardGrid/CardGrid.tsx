@@ -1,18 +1,7 @@
 import { FC } from "react";
 import { Card } from "../../components/Card";
+import type { TCardGrid } from "../../types";
 import "./CardGrid.scss";
-
-export type TCardGrid = {
-  paintings: [
-    {
-      id: string;
-      name: string;
-      img: string;
-      year: string;
-    }
-  ];
-  isDarkTheme?: boolean;
-};
 
 const CardGrid: FC<TCardGrid> = ({ paintings, isDarkTheme }) => {
   return (

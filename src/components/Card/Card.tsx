@@ -40,7 +40,11 @@ const Card: FC<TCard> = ({ name, img, year, isDarkTheme }) => {
             {year}
           </p>
         </div>
-        <div className="card__rectangle">
+        <div
+          className={cn("card__rectangle", {
+            card__rectangle_dark: isDarkTheme,
+          })}
+        >
           <CardArrow className="card__arrow" />
         </div>
       </div>

@@ -1,5 +1,5 @@
 import { Link } from "../ui/Link";
-import type { TLink } from "../ui/Link/Link";
+import type { TLink } from "../types";
 // eslint-disable-next-line import/named, import/no-extraneous-dependencies
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 

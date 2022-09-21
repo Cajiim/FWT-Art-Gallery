@@ -1,5 +1,5 @@
 import { Label } from "../ui/Label";
-import type { TLabel } from "../ui/Label/Label";
+import type { TLabel } from "../types";
 // eslint-disable-next-line import/named, import/no-extraneous-dependencies
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
