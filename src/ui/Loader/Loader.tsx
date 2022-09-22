@@ -20,8 +20,3 @@ const Loader: FC<TLoader> = ({ ...other }) => {
 };
 
 export default Loader;
-
-/* 
-className={cn("loader__animation", {
-    loader__animation_dark: other.isDarkTheme,
-  })} */
