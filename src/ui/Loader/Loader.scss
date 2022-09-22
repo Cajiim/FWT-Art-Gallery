@@ -1,0 +1,43 @@
+.loader {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.loader div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 5px solid #121212;
+  border-radius: 50%;
+  animation: loader 2s cubic-bezier(0.5, 1, 0.5, 0) infinite;
+  border-color: #121212 transparent transparent transparent;
+}
+.loader_dark div {
+  border: 5px solid #dedede;
+  border-color: #dedede transparent transparent transparent;
+}
+.loader div:nth-child(1) {
+  animation-delay: 0.1s;
+  opacity: 0.6;
+}
+.loader div:nth-child(2) {
+  animation-delay: 0.15s;
+  opacity: 0.5;
+}
+.loader div:nth-child(3) {
+  animation-delay: 0.2s;
+  opacity: 0.4;
+}
+
+
+@keyframes loader {
+  0% {
+    transform: rotate(150deg);
+  }
+  100% {
+    transform: rotate(870deg);
+  }
+}

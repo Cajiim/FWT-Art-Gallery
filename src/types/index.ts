@@ -56,3 +56,8 @@ export type TToast = {
   children: string;
   isDarkTheme?: boolean;
 };
+
+export type TLoader = {
+  isDarkTheme?: boolean;
+  other: HTMLAnchorElement;
+};
