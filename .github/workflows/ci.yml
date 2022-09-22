@@ -1,18 +1,26 @@
-name: CI                            
+name: CI
 on:
-branch
   pull_request:
-    branches: [ master ]     
-jobs:                    
-  build:              
+    branches: [ master ]
+jobs:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    steps:                        
-      - uses: actions/checkout@v2
-      
-      - name: npm install ci       
-        run: npm i        
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.1
+        with:
+          persist-credentials: false
 
-      - name: Deploy to gh-pages
-        run: |        
-           git remote set-url origin https://git:${{ secrets.TOKEN }}@github.com/${GITHUB_REPOSITORY}.git
-           npm run deploy
+      - name: Install 
+        run: npm install
+
+      - name: Build 
+        run: npm run build
+
+      - name: Deploy 
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: public
+          CLEAN: true
