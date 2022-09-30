@@ -24,7 +24,7 @@ const Card: FC<TCard> = ({ name, img, year, isDarkTheme }) => {
             card__band_dark: isDarkTheme,
           })}
         />
-        <div>
+        <div className="card__text">
           <h4
             className={cn("card__name", {
               card__name_dark: isDarkTheme,

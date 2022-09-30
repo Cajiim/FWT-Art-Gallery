@@ -1,22 +1,21 @@
 export type TButton = {
-  className: string;
+  className?: string;
   children: string;
   onClick: () => void;
   isDisabled?: boolean;
   isOutlined?: boolean;
   isDarkTheme?: boolean;
-  other: HTMLButtonElement;
+  other?: HTMLButtonElement;
+  size?: string;
 };
 
 export type TCardGrid = {
-  paintings: [
-    {
-      id: string;
-      name: string;
-      img: string;
-      year: string;
-    }
-  ];
+  paintings?: {
+    id: string;
+    name: string;
+    img: string;
+    year: string;
+  }[];
   isDarkTheme?: boolean;
 };
 
@@ -47,7 +46,7 @@ export type TLabel = {
 export type TLink = {
   link: string;
   children: string;
-  other: HTMLAnchorElement;
+  other?: HTMLAnchorElement;
   isDarkTheme?: boolean;
   className?: string;
 };
@@ -60,4 +59,10 @@ export type TToast = {
 export type TLoader = {
   isDarkTheme?: boolean;
   other: HTMLAnchorElement;
+};
+
+export type TTheme = {
+  isDarkTheme?: boolean;
+  theme?: "dark" | "light";
+  toggle?: () => void;
 };

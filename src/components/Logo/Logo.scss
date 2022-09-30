@@ -1,0 +1,8 @@
+.logo {
+  fill: var(--primary-dark-gray);
+  cursor: pointer;
+
+  &_dark {
+    fill: var(--primary-light-gray);
+  }
+}

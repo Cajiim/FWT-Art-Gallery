@@ -1,4 +1,10 @@
 .button {
+  @mixin for-mobile-up {
+    @media screen and (max-width: 767px) {
+      @content;
+    }
+  }
+  
   width: 200px;
   height: 47px;
   background: var(--primary-black);
@@ -33,6 +39,8 @@
     }
   }
   &_outlined {
+    width: auto;
+    height: auto;
     background: none;
     text-decoration: underline;
     color: var(--primary-dark-gray);
@@ -59,6 +67,23 @@
       &:disabled {
         color: var(--secondary-gray);
       }
+    }
+  }
+
+  &_noUnderline {
+    text-decoration: none;
+  }
+  &_medium {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  &_large {
+    font-size: 60px;
+    line-height: 73px;
+
+    @include for-mobile-up {
+      font-size: 32px;
+      line-height: 100%;
     }
   }
 }

@@ -8,18 +8,24 @@
     @media screen and (max-width: 767px) {
       @content;
     }
-  } 
+  }
 
   display: flex;
   flex-wrap: wrap;
   gap: 32px;
   max-width: 1240px;
-  margin: 0 100px 0 100px;
-  height: 100%;
+  margin: 100px auto 100px auto !important;
 
   @include for-tablet-up {
-    margin: 0 20px 0 20px;
+    gap: 24px;
+    margin: 100px 20px 100px 20px !important;
+    max-width: 1400px;
   }
+  @include for-mobile-up {
+    margin: 80px 20px 80px 20px !important;
+    gap: 20px;
+  }
+
   &__item {
     position: relative;
     list-style: none;
@@ -30,7 +36,7 @@
 
     @include for-tablet-up {
       height: auto;
-      width: calc(100% - 24px / 2);
+      width: calc((100% - 24px) / 2);
       aspect-ratio: 352/220;
     }
     @include for-mobile-up {

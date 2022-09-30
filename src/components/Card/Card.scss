@@ -27,6 +27,7 @@
       aspect-ratio: 280/185;
     }
   }
+
   &__curtain {
     z-index: 1;
     display: flex;
@@ -36,30 +37,33 @@
     bottom: 0px;
     width: 300px;
     height: 82px;
-    background: var(--primary-black);
+    background: var(--primary-white);
     animation-fill-mode: none, backwards;
 
     &:hover + .card__painting {
       transform: scale(1.2);
     }
     &_dark {
-      background: var(--primary-white);
+      background: var(--primary-black);
     }
+
     @include for-tablet-up {
-      height: auto;
-      width: 300px;
+      height: 30%;
+      width: 85.22727272727273%;
       aspect-ratio: 300/66;
     }
     @include for-mobile-up {
-      aspect-ratio: 236/45;
+      height: 24.32432432432432%;
+      width: 84.28571428571429%;
     }
   }
+
   &__band {
-    border-left: 2px solid var(--accent-gold);
+    border-left: 2px solid var(--accent-red);
     height: 42px;
     display: block;
     &_dark {
-      border-color: var(--accent-red);
+      border-color: var(--accent-gold);
     }
     @include for-tablet-up {
       display: none;
@@ -72,13 +76,17 @@
     font-size: 16px;
     line-height: 19px;
     text-transform: uppercase;
-    color: var(--primary-white);
+    color: var(--primary-black);
 
     &_dark {
-      color: var(--primary-black);
+      color: var(--primary-white);
     }
     @include for-tablet-up {
       margin: 0 0 0 12px;
+    }
+    @include for-mobile-up {
+      font-size: 12px;
+      line-height: 15px;
     }
   }
   &__year {
@@ -88,18 +96,23 @@
     font-size: 12px;
     line-height: 15px;
     text-transform: uppercase;
-    color: var(--accent-gold);
+    color: var(--accent-red);
 
     &_dark {
-      color: var(--accent-red);
+      color: var(--accent-gold);
     }
+
     @include for-tablet-up {
       margin: 0 0 0 12px;
+    }
+    @include for-mobile-up {
+      font-size: 8px;
+      line-height: 10px;
     }
   }
   &__rectangle {
     display: none;
-    background: var(--accent-gold);
+    background: var(--accent-red);
     align-items: center;
     justify-content: center;
     position: relative;
@@ -109,10 +122,28 @@
     right: -53px;
 
     &_dark {
-      background: var(--accent-red);
+      background: var(--accent-gold);
     }
     @include for-tablet-up {
       display: flex;
+      position: absolute;
+      right: -8%;
+      width: 8%;
+      height: 100%;
+      aspect-ratio: 24/66;
+    }
+    @include for-mobile-up {
+      right: -10%;
+      width: 10%;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    @include for-tablet-up {
+      margin-left: 12px !important;
     }
   }
 }

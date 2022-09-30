@@ -1,0 +1,110 @@
+.header {
+  @mixin for-tablet-up {
+    @media screen and (max-width: 1439px) {
+      @content;
+    }
+  }
+  @mixin for-mobile-up {
+    @media screen and (max-width: 767px) {
+      @content;
+    }
+  }
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 84px;
+  margin: 0 auto !important;
+  max-width: 1240px;
+  position: relative;
+
+  @include for-tablet-up {
+    margin: 0 20px 0 20px !important;
+    max-width: 1400px;
+  }
+  @include for-mobile-up {
+    height: 64px;
+  }
+
+  &__navigation {
+    display: flex;
+
+    @include for-tablet-up {
+      display: none;
+    }
+  }
+  &__buttons {
+    display: flex;
+    gap: 20px;
+    margin: 0 60px 0 0 !important;
+  }
+
+  &_dark {
+    background: var(--primary-black);
+  }
+
+  &__menu {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    width: 24px;
+    height: 18px;
+    z-index: 5;
+    right: 0;
+
+    &::after,
+    &::before,
+    & span {
+      left: 0;
+      position: absolute;
+      height: 10%;
+      width: 100%;
+      transition: all 0.3s ease 0s;
+      background-color: var(--primary-dark-gray);
+    }
+
+    &::before {
+      content: "";
+      top: 0;
+      border-radius: 10px;
+    }
+
+    &::after {
+      bottom: 0;
+      border-radius: 10px;
+      content: "";
+    }
+
+    & span {
+      top: 40%;
+      transform: scale(1) translate(0px, 50%);
+      border-radius: 10px;
+    }
+
+    &_open span {
+      transform: scale(0) translate(0px, 50%);
+    }
+
+    &_open::before {
+      top: 50%;
+      transform: rotate(-45deg) translate(0px, -80%);
+    }
+
+    &_open::after {
+      bottom: 50%;
+      transform: rotate(45deg) translate(0px, 80%);
+    }
+
+    &_dark {
+      &::after,
+      &::before,
+      & span {
+        background: var(--primary-light-gray);
+      }
+    }
+
+    @include for-tablet-up {
+      display: block;
+    }
+  }
+}

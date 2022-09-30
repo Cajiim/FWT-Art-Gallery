@@ -1,0 +1,97 @@
+:root {
+  --primary-white: #ffffff;
+  --primary-black: #121212;
+  --primary-light-gray: #dedede;
+  --primary-dark-gray: #575757;
+
+  --secondary-white: #fcfcfc;
+  --secondary-black: #1a1818;
+  --secondary-gray: #9c9c9c;
+
+  --accent-red: #9b4b4b;
+  --accent-gold: #ab8956;
+  --accent-error: #ae2917;
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  @mixin for-tablet-up {
+    @media screen and (max-width: 1439px) {
+      @content;
+    }
+  }
+  @mixin for-mobile-up {
+    @media screen and (max-width: 767px) {
+      @content;
+    }
+  }
+
+  @font-face {
+    font-family: "Inter";
+    src: url("../../assets/fonts/Inter/Inter-Light.woff2") format("woff2")
+      url("../../assets/fonts/Inter/Inter-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Inter";
+    src: url("../../assets/fonts/Inter/Inter-Medium.woff2") format("woff2")
+      url("../../assets/fonts/Inter/Inter-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Inter";
+    src: url("../../assets/fonts/Inter/Inter-Bold.woff2") format("woff2")
+      url("../../assets/fonts/Inter/Inter-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  //// Cormorantsc
+
+  @font-face {
+    font-family: "Cormorant SC";
+    src: local("Cormorant SC Book"), local("CormorantSC-Book"),
+      url("../../assets/fonts/Cormorants/Cormorantscbook.woff2") format("woff2"),
+      url("../../assets/fonts/Cormorants/Cormorantscbook.woff") format("woff"),
+      url("../../assets/fonts/Cormorants/Cormorantscbook.ttf")
+        format("truetype");
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Cormorant SC";
+    src: local("Cormorant SC Semibold"), local("CormorantSC-Semibold"),
+      url("../../assets/fonts/Cormorants/Cormorantscsemibold.woff2")
+        format("woff2"),
+      url("../../assets/fonts/Cormorants/Cormorantscsemibold.woff")
+        format("woff"),
+      url("../../assets/fonts/Cormorants/Cormorantscsemibold.ttf")
+        format("truetype");
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Cormorant SC";
+    src: local("Cormorant SC Bold"), local("CormorantSC-Bold"),
+      url("../../assets/fonts/Cormorants/Cormorantscbold.woff2") format("woff2"),
+      url("../../assets/fonts/Cormorants/Cormorantscbold.woff") format("woff"),
+      url("../../assets/fonts/Cormorants/Cormorantscbold.ttf")
+        format("truetype");
+    font-weight: 700;
+    font-style: normal;
+  }
+}
+
+.darkTheme {
+  background: var(--primary-black);
+}
