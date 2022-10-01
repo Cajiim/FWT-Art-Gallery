@@ -6,17 +6,27 @@
   color: var(--primary-dark-gray);
   text-decoration: none;
   border-bottom: 1px solid var(--primary-dark-gray);
+  /* primary/dark gray */
+  fill: #575757;
 
   &:hover {
     color: var(--primary-black);
     border-color: #121212;
   }
   &_dark {
+    /* primary/light gray */
+    fill: #dedede;
     color: var(--primary-light-gray);
     border-color: var(--primary-light-gray);
     &:hover {
       color: var(--primary-white);
       border-color: var(--primary-white);
     }
+  }
+
+  &__social {
+    width: 24px;
+    height: 24px;
+    border: none;
   }
 }

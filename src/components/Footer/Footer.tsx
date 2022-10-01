@@ -1,8 +1,8 @@
 import { FC } from "react";
 import classNames from "classnames";
-import { Facebook } from "../../ui/Facebook";
-import { Instagram } from "../../ui/Instagram";
-import { Vk } from "../../ui/Vk";
+import { ReactComponent as Facebook } from "../../assets/img/facebook.svg";
+import { ReactComponent as Instagram } from "../../assets/img/inst.svg";
+import { ReactComponent as Vk } from "../../assets/img/vk.svg";
 import { Link } from "../../ui/Link";
 import styles from "./Footer.scss";
 const cn = classNames.bind(styles);
@@ -35,9 +35,27 @@ const Footer: FC<TFooter> = ({ ...other }) => {
         <p className="footer__author">Петров Александр, 2022</p>
       </div>
       <div className="footer__social">
-        <Facebook isDarkTheme={other.isDarkTheme} />
-        <Vk isDarkTheme={other.isDarkTheme} />
-        <Instagram isDarkTheme={other.isDarkTheme} />
+        <Link
+          link={"https://www.facebook.com/framework.team"}
+          isDarkTheme={other.isDarkTheme}
+          className={"link__social"}
+        >
+          <Facebook />
+        </Link>
+        <Link
+          link={"https://vk.com/frameworkteam"}
+          isDarkTheme={other.isDarkTheme}
+          className={"link__social"}
+        >
+          <Vk />
+        </Link>
+        <Link
+          link={"https://www.instagram.com/framework.team/"}
+          isDarkTheme={other.isDarkTheme}
+          className={"link__social"}
+        >
+          <Instagram />
+        </Link>
       </div>
     </footer>
   );

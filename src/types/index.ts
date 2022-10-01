@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export type TButton = {
   className?: string;
   children: string;
@@ -45,7 +47,7 @@ export type TLabel = {
 
 export type TLink = {
   link: string;
-  children: string;
+  children: ReactNode;
   other?: HTMLAnchorElement;
   isDarkTheme?: boolean;
   className?: string;
