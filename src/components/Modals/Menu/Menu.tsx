@@ -7,24 +7,29 @@ const cn = classNames.bind(styles);
 
 type TMenu = {
   isOpen: boolean;
+  setIsOpen: (arg: boolean) => void;
   onClick?: () => void;
   isDarkTheme?: boolean;
   other?: HTMLDivElement;
 };
 
-const Menu: FC<TMenu> = ({ isOpen, onClick, ...other }) => {
+const Menu: FC<TMenu> = ({ isOpen, onClick, setIsOpen, ...other }) => {
   return (
     <div
       className={cn("menu", {
         menu_open: isOpen,
         menu_dark: other.isDarkTheme,
       })}
+      onClick={() => setIsOpen(!isOpen)}
+      aria-hidden
     >
       <div
         className={cn("menu__content", {
           menu__content_open: isOpen,
           menu__content_dark: other.isDarkTheme,
         })}
+        onClick={(e) => e.stopPropagation()}
+        aria-hidden
       >
         <div className="menu__sideContent">
           <div className="menu__theme" onClick={onClick} aria-hidden>

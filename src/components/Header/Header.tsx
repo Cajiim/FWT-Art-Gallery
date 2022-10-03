@@ -52,7 +52,12 @@ const Header: FC<TTheme> = ({ isDarkTheme, toggle }) => {
       >
         <span />
       </li>
-      <Menu isOpen={isOpen} isDarkTheme={isDarkTheme} onClick={toggle} />
+      <Menu
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        isDarkTheme={isDarkTheme}
+        onClick={toggle}
+      />
     </header>
   );
 };
