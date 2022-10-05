@@ -1,15 +1,14 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { fetchAuthors } from "../../api/api";
-/* import type { TFilter } from "../../types"; */
-
-type TFilter = {};
+import { baseUrl } from "../../api";
+import type { TAuthors } from "../../types";
+import axios from "axios";
 
 export const fetchAuthors = createAsyncThunk(
-  "paintings/fetchPaintings",
-  async (urlFilter: TFilter, { rejectWithValue }) => {
+  "authors/fetchAuthors",
+  async (_, { rejectWithValue }) => {
     try {
-      const response = await fetchAuthors(urlFilter);
-      const data = await response.data;
+      const response = await axios.get(`${baseUrl}artists/static`);
+      const data: TAuthors = await response.data;
       const totalCount = response.headers["x-total-count"];
       return { data, totalCount };
     } catch (error: unknown) {

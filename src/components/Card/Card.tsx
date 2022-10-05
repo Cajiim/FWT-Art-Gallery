@@ -1,17 +1,18 @@
 import { FC } from "react";
 import classNames from "classnames";
 import { ReactComponent as CardArrow } from "../../assets/img/cardArrow.svg";
+import { baseUrl } from "../../api";
 import styles from "./Card.scss";
 const cn = classNames.bind(styles);
 
 type TCard = {
-  name: string;
-  img: string;
-  year: string;
+  name?: string;
+  img?: string;
+  yearsOfLife?: string;
   isDarkTheme?: boolean;
 };
 
-const Card: FC<TCard> = ({ name, img, year, isDarkTheme }) => {
+const Card: FC<TCard> = ({ name, img, yearsOfLife, isDarkTheme }) => {
   return (
     <div className="card">
       <div
@@ -37,7 +38,7 @@ const Card: FC<TCard> = ({ name, img, year, isDarkTheme }) => {
               card__year_dark: isDarkTheme,
             })}
           >
-            {year}
+            {yearsOfLife}
           </p>
         </div>
         <div
@@ -48,7 +49,7 @@ const Card: FC<TCard> = ({ name, img, year, isDarkTheme }) => {
           <CardArrow className="card__arrow" />
         </div>
       </div>
-      <img src={img} alt="painting" className="card__painting" />
+      <img src={`${baseUrl}${img}`} alt="painting" className="card__painting" />
     </div>
   );
 };

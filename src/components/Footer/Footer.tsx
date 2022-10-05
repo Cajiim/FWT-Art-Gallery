@@ -14,11 +14,7 @@ type TFooter = {
 
 const Footer: FC<TFooter> = ({ ...other }) => {
   return (
-    <footer
-      className={cn("footer", {
-        footer_dark: other.isDarkTheme,
-      })}
-    >
+    <footer className="footer">
       <div
         className={cn("footer__text", {
           footer__text_dark: other.isDarkTheme,

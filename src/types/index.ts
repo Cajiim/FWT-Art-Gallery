@@ -60,11 +60,27 @@ export type TToast = {
 
 export type TLoader = {
   isDarkTheme?: boolean;
-  other: HTMLAnchorElement;
+  other?: HTMLAnchorElement;
 };
 
 export type TTheme = {
   isDarkTheme?: boolean;
   theme?: "dark" | "light";
   toggle?: () => void;
+};
+
+export type TAuthors = {
+  genres?: [string];
+  _id?: string;
+  name?: string;
+  description?: string;
+  yearsOfLife?: string;
+  mainPainting?: {
+    _id: string;
+    name: string;
+    yearOfCreation: string;
+    image: { _id: string; src: string; original: string };
+  };
+
+  isDarkTheme?: boolean;
 };

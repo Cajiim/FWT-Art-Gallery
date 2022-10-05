@@ -1,7 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
+import reducerData from "./reducers/reducerData";
+import reducerTheme from "./reducers/reducerTheme";
 
 const store = configureStore({
-  reducer: {},
+  reducer: {
+    data: reducerData,
+    currTheme: reducerTheme,
+  },
 });
 
 export default store;

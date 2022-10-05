@@ -14,11 +14,7 @@ const Header: FC<TTheme> = ({ isDarkTheme, toggle }) => {
     setIsOpen(!isOpen);
   };
   return (
-    <header
-      className={cn("header", {
-        header_dark: isDarkTheme,
-      })}
-    >
+    <header className="header">
       <Logo isDarkTheme={isDarkTheme} />
       <nav className="header__navigation">
         <div className="header__buttons">

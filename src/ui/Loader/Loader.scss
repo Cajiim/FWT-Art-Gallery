@@ -1,10 +1,12 @@
 .loader {
-  display: inline-block;
-  position: relative;
+  display: flex;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
   width: 80px;
   height: 80px;
 
-  & div{
+  & div {
     box-sizing: border-box;
     display: block;
     position: absolute;
@@ -16,22 +18,22 @@
     border-color: #121212 transparent transparent transparent;
   }
 
-  &_dark div{
+  &_dark div {
     border: 5px solid #dedede;
     border-color: #dedede transparent transparent transparent;
   }
 
-  & div:nth-child(1){
+  & div:nth-child(1) {
     animation-delay: 0.1s;
     opacity: 0.6;
   }
 
-  & div:nth-child(2){
+  & div:nth-child(2) {
     animation-delay: 0.15s;
     opacity: 0.5;
   }
 
-  & div:nth-child(3){
+  & div:nth-child(3) {
     animation-delay: 0.2s;
     opacity: 0.4;
   }
