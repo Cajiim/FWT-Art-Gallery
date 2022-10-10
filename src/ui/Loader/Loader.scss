@@ -1,43 +1,147 @@
 .loader {
-  display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 80px;
-}
-.loader div {
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
   width: 50px;
   height: 50px;
-  border: 5px solid #121212;
-  border-radius: 50%;
-  animation: loader 2s cubic-bezier(0.5, 1, 0.5, 0) infinite;
-  border-color: #121212 transparent transparent transparent;
-}
-.loader_dark div {
-  border: 5px solid #dedede;
-  border-color: #dedede transparent transparent transparent;
-}
-.loader div:nth-child(1) {
-  animation-delay: 0.1s;
-  opacity: 0.6;
-}
-.loader div:nth-child(2) {
-  animation-delay: 0.15s;
-  opacity: 0.5;
-}
-.loader div:nth-child(3) {
-  animation-delay: 0.2s;
-  opacity: 0.4;
+
+  &__spinner {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    z-index: 2;
+    animation: rotate 2s linear infinite;
+  }
+  &__circle {
+    stroke-width: 5px;
+    stroke: black;
+    stroke-linecap: round;
+    animation: dash 2s ease-in-out infinite;
+  }
+
+  &__spinner_two {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    animation: rotate 2s linear infinite;
+    opacity: 0.8;
+  }
+  &__circle_two {
+    stroke-width: 5px;
+    stroke: black;
+    stroke-linecap: round;
+    animation: dashTwo 2s ease-in-out infinite;
+  }
+
+  &__spinner_three {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    animation: rotate 2s linear infinite;
+    opacity: 0.45;
+  }
+  &__circle_three {
+    stroke-width: 5px;
+    stroke: black;
+    stroke-linecap: round;
+    animation: dashThree 2s ease-in-out infinite;
+  }
+
+  &__spinner_four {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    animation: rotate 2s linear infinite;
+    opacity: 0.1;
+  }
+  &__circle_four {
+    stroke-width: 5px;
+    stroke: black;
+    stroke-linecap: round;
+    animation: dashFour 2s ease-in-out infinite;
+  }
 }
 
-
-@keyframes loader {
+@keyframes dash {
   0% {
-    transform: rotate(150deg);
+    stroke-dasharray: 1, 124;
+    stroke-dashoffset: 0;
+  }
+  10% {
+    stroke-dashoffset: -10;
+  }
+  50% {
+    stroke-dasharray: 60, 124;
+    stroke-dashoffset: -35;
   }
   100% {
-    transform: rotate(870deg);
+    stroke-dasharray: 60, 124;
+    stroke-dashoffset: -124;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dashTwo {
+  0% {
+    stroke-dasharray: 1, 124;
+    stroke-dashoffset: 0;
+  }
+  10% {
+    stroke-dashoffset: 0;
+  }
+  45%{
+    stroke-dashoffset: -20;
+  }
+  50% {
+    stroke-dasharray: 60, 124;
+    stroke-dashoffset: -25;
+  }
+  100% {
+    stroke-dasharray: 60, 124;
+    stroke-dashoffset: -124;
+  }
+}
+
+@keyframes dashThree {
+  0% {
+    stroke-dasharray: 1, 124;
+    stroke-dashoffset: 0;
+  }
+  10% {
+    stroke-dashoffset: 0;
+  }
+  45%{
+    stroke-dashoffset: -10;
+  }
+  50% {
+    stroke-dasharray: 60, 124;
+    stroke-dashoffset: -15;
+  }
+  100% {
+    stroke-dasharray: 60, 124;
+    stroke-dashoffset: -124;
+  }
+}
+
+@keyframes dashFour {
+  0% {
+    stroke-dasharray: 1, 124;
+    stroke-dashoffset: 0;
+  }
+  10% {
+    stroke-dashoffset: 0;
+  }
+  45%{
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 60, 124;
+    stroke-dashoffset: -5;
+  }
+  100% {
+    stroke-dasharray: 60, 124;
+    stroke-dashoffset: -124;
   }
 }
