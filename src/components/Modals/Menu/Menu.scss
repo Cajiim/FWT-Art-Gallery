@@ -10,19 +10,24 @@
     }
   }
 
-  right: -160%;
   position: fixed;
   width: 100vw;
   height: 100vh;
   top: 0;
+  left:0;
   background: rgba(3, 3, 3, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 0.6s ease 0.3s;
   z-index: 2;
-  transition: right 0.6s cubic-bezier(0, 0, 1, 1);
 
   &_open {
     @include for-tablet-up {
-      right: 0;
-      transition-property: all;
+      visibility: visible;
+      opacity: 1;
+      transition-property : all;
     }
   }
 
@@ -36,7 +41,7 @@
     height: 100%;
     width: 60.67708333333333%;
     background: var(--secondary-white);
-    z-index: 3;
+    z-index: 3 !important;
     transition: right 0.6s cubic-bezier(0, 0, 1, 1);
 
     &_open {
