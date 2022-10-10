@@ -39,7 +39,7 @@ export type TInput = {
 export type TLabel = {
   children: string;
   className: string;
-  other: HTMLAnchorElement;
+  other: HTMLLabelElement;
   isDarkTheme?: boolean;
   isVisible?: boolean;
 };
@@ -59,5 +59,5 @@ export type TToast = {
 
 export type TLoader = {
   isDarkTheme?: boolean;
-  other: HTMLAnchorElement;
+  other: HTMLDivElement;
 };
