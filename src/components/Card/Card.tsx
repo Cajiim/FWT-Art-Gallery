@@ -1,7 +1,7 @@
 import { FC } from "react";
 import classNames from "classnames";
 import { ReactComponent as CardArrow } from "../../assets/img/cardArrow.svg";
-import { baseUrl } from "../../api";
+import { baseURL } from "../../api";
 import styles from "./Card.scss";
 const cn = classNames.bind(styles);
 
@@ -49,7 +49,7 @@ const Card: FC<TCard> = ({ name, img, yearsOfLife, isDarkTheme }) => {
           <CardArrow className="card__arrow" />
         </div>
       </div>
-      <img src={`${baseUrl}${img}`} alt="painting" className="card__painting" />
+      <img src={`${baseURL}${img}`} alt="painting" className="card__painting" />
     </div>
   );
 };
