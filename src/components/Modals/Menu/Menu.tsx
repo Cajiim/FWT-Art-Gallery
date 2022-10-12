@@ -20,7 +20,7 @@ const Menu: FC<TMenu> = ({ isOpen, onClick, setIsOpen, ...other }) => {
         menu_open: isOpen,
         menu_dark: other.isDarkTheme,
       })}
-      onClick={() => setIsOpen(!isOpen)}
+      onClick={() => setIsOpen(false)}
       aria-hidden
     >
       <div
