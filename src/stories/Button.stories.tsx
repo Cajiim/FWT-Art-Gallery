@@ -1,17 +1,15 @@
-import { Button } from "../ui/Button";
-import type { TButton } from "../types";
+import { Button } from "../components/UI/Button";
+import type { ComponentStory, ComponentMeta } from "@storybook/react";
 import "../styles/colors/colors.scss";
-// eslint-disable-next-line import/named
-import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 export default {
   title: "Button",
   component: Button,
 } as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (arg: TButton) => {
-  const { children } = arg;
-  return <Button {...arg}>{children}</Button>;
+const Template: ComponentStory<typeof Button> = (args) => {
+  const { children } = args;
+  return <Button {...args}>{children}</Button>;
 };
 
 export const ButtonComponent = Template.bind({});

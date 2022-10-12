@@ -1,16 +1,18 @@
 import { FC } from "react";
-import type { TToast } from "../../types";
-import { ReactComponent as CloseIcon } from "../../assets/img/closeIconLarge.svg";
-import { ReactComponent as Error } from "../../assets/img/error.svg";
+import type { TToast } from "../../../types";
+import { ReactComponent as CloseIcon } from "../../../assets/img/closeIconLarge.svg";
+import { ReactComponent as Error } from "../../../assets/img/error.svg";
 import classNames from "classnames";
 import styles from "./Toast.scss";
+
 const cn = classNames.bind(styles);
 
-const Toast: FC<TToast> = ({ children, ...other }) => {
+const Toast: FC<TToast> = ({ children, ...args }) => {
+  const { isDarkTheme } = args;
   return (
     <div
       className={cn("toast", {
-        toast_dark: other.isDarkTheme,
+        toast_dark: isDarkTheme,
       })}
     >
       <div className="toast__container">
@@ -22,7 +24,7 @@ const Toast: FC<TToast> = ({ children, ...other }) => {
           <p className="toast__error">Error!</p>
           <p
             className={cn("toast__errorText", {
-              toast__errorText_dark: other.isDarkTheme,
+              toast__errorText_dark: isDarkTheme,
             })}
           >
             {children}
@@ -30,7 +32,7 @@ const Toast: FC<TToast> = ({ children, ...other }) => {
         </div>
         <div
           className={cn("toast__closeIcon", {
-            toast__closeIcon_dark: other.isDarkTheme,
+            toast__closeIcon_dark: isDarkTheme,
           })}
         >
           <CloseIcon />

@@ -18,6 +18,7 @@
     &:hover {
       transform: scale(1.2);
     }
+
     @include for-tablet-up {
       height: auto;
       width: 100%;
@@ -27,13 +28,14 @@
       aspect-ratio: 280/185;
     }
   }
+
   &__curtain {
     z-index: 1;
     display: flex;
     gap: 20px;
     align-items: center;
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     width: 300px;
     height: 82px;
     background: var(--primary-black);
@@ -42,9 +44,11 @@
     &:hover + .card__painting {
       transform: scale(1.2);
     }
+
     &_dark {
       background: var(--primary-white);
     }
+
     @include for-tablet-up {
       height: auto;
       width: 300px;
@@ -54,19 +58,23 @@
       aspect-ratio: 236/45;
     }
   }
+
   &__band {
     border-left: 2px solid var(--accent-gold);
     height: 42px;
     display: block;
+
     &_dark {
       border-color: var(--accent-red);
     }
+
     @include for-tablet-up {
       display: none;
     }
   }
+
   &__name {
-    font-family: "Cormorant SC";
+    font-family: var(--font-heading);
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -77,12 +85,14 @@
     &_dark {
       color: var(--primary-black);
     }
+
     @include for-tablet-up {
       margin: 0 0 0 12px;
     }
   }
+
   &__year {
-    font-family: "Inter";
+    font-family: var(--font-paragraph);
     font-style: normal;
     font-weight: 700;
     font-size: 12px;
@@ -93,26 +103,29 @@
     &_dark {
       color: var(--accent-red);
     }
+
     @include for-tablet-up {
       margin: 0 0 0 12px;
     }
   }
+
   &__rectangle {
     display: none;
-    background: var(--accent-gold);
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    height: auto;
-    width: 24px;
-    aspect-ratio: 24/66;
-    right: -53px;
+
+    @include for-tablet-up {
+      display: flex;
+      background: var(--accent-gold);
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      height: auto;
+      width: 24px;
+      aspect-ratio: 24/66;
+      right: -53px;
+    }
 
     &_dark {
       background: var(--accent-red);
-    }
-    @include for-tablet-up {
-      display: flex;
     }
   }
 }

@@ -1,17 +1,15 @@
-import { CardGrid } from "../ui/CardGrid";
-import type { TCardGrid } from "../types";
+import { CardGrid } from "../components/UI/CardGrid";
+import type { ComponentStory, ComponentMeta } from "@storybook/react";
 import "../styles/breakpoints/breakpoints.scss";
-// eslint-disable-next-line import/named
-import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 export default {
   title: "CardGrid",
   component: CardGrid,
 } as ComponentMeta<typeof CardGrid>;
 
-const Template: ComponentStory<typeof CardGrid> = (arg: TCardGrid) => {
-  const { paintings } = arg;
-  return <CardGrid {...arg} {...paintings}></CardGrid>;
+const Template: ComponentStory<typeof CardGrid> = (args) => {
+  const { paintings } = args;
+  return <CardGrid {...args} {...paintings}></CardGrid>;
 };
 
 export const CardGridComponent = Template.bind({});

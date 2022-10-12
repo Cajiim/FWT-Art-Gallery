@@ -1,14 +1,18 @@
-export type TButton = {
-  className: string;
-  children: string;
-  onClick: () => void;
+import {
+  AnchorHTMLAttributes,
+  ButtonHTMLAttributes,
+  InputHTMLAttributes,
+  LabelHTMLAttributes,
+  HTMLAttributes,
+} from "react";
+
+export type TButton = ButtonHTMLAttributes<HTMLButtonElement> & {
   isDisabled?: boolean;
   isOutlined?: boolean;
   isDarkTheme?: boolean;
-  other: HTMLButtonElement;
 };
 
-export type TCardGrid = {
+export type TCardGrid = HTMLAttributes<HTMLElement> & {
   paintings: [
     {
       id: string;
@@ -20,44 +24,29 @@ export type TCardGrid = {
   isDarkTheme?: boolean;
 };
 
-export type TCheckbox = {
-  className?: string;
-  id?: string;
-  other?: HTMLInputElement;
+export type TCheckbox = InputHTMLAttributes<HTMLInputElement> & {
   isDarkTheme?: boolean;
 };
 
-export type TInput = {
-  className: string;
-  other: HTMLInputElement;
+export type TInput = InputHTMLAttributes<HTMLInputElement> & {
   isDarkTheme?: boolean;
   isError?: boolean;
-  placeholder?: string;
   errorMessage?: string;
 };
 
-export type TLabel = {
-  children: string;
-  className: string;
-  other: HTMLLabelElement;
+export type TLabel = LabelHTMLAttributes<HTMLLabelElement> & {
   isDarkTheme?: boolean;
   isVisible?: boolean;
 };
 
-export type TLink = {
-  link: string;
-  children: string;
-  other: HTMLAnchorElement;
-  isDarkTheme?: boolean;
-  className?: string;
-};
-
-export type TToast = {
-  children: string;
+export type TLink = AnchorHTMLAttributes<HTMLAnchorElement> & {
   isDarkTheme?: boolean;
 };
 
-export type TLoader = {
+export type TToast = HTMLAttributes<HTMLDivElement> & {
   isDarkTheme?: boolean;
-  other: HTMLDivElement;
+};
+
+export type TLoader = HTMLAttributes<HTMLDivElement> & {
+  isDarkTheme?: boolean;
 };

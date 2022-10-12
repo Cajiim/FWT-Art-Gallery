@@ -1,5 +1,5 @@
 .link {
-  font-family: "Inter";
+  font-family: var(--font-paragraph);
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -9,11 +9,13 @@
 
   &:hover {
     color: var(--primary-black);
-    border-color: #121212;
+    border-color: var(--primary-black);
   }
+
   &_dark {
     color: var(--primary-light-gray);
     border-color: var(--primary-light-gray);
+    
     &:hover {
       color: var(--primary-white);
       border-color: var(--primary-white);

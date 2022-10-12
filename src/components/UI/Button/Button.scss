@@ -4,7 +4,7 @@
   background: var(--primary-black);
   border-radius: 30px;
   border: 0px;
-  font-family: "Inter";
+  font-family: var(--font-paragraph);
   font-style: normal;
   font-weight: 700;
   font-size: 12px;
@@ -14,24 +14,30 @@
   cursor: pointer;
 
   &:hover {
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 10px var(--box-shadow-black);
   }
+
   &:focus {
-    background: #232323;
+    background: var(--focus-black);
   }
+
   &:disabled {
     opacity: 0.5;
     pointer-events: none;
   }
+
   &_dark {
     background: var(--accent-gold);
+
     &:hover {
-      box-shadow: 0px 4px 10px rgba(171, 137, 86, 0.25);
+      box-shadow: 0px 4px 10px var(--box-shadow-gold);
     }
+
     &:focus {
-      background: #ba9052;
+      background: var(--focus-gold);
     }
   }
+
   &_outlined {
     background: none;
     text-decoration: underline;
@@ -41,21 +47,27 @@
       color: var(--primary-black);
       box-shadow: none;
     }
+
     &:focus {
       color: var(--primary-black);
       background: none;
     }
+
     &:disabled {
       color: var(--primary-light-gray);
     }
+
     &_dark {
       color: var(--primary-light-gray);
+
       &:hover {
         color: var(--primary-white);
       }
+
       &:focus {
         color: var(--primary-white);
       }
+
       &:disabled {
         color: var(--secondary-gray);
       }

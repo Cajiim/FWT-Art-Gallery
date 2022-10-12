@@ -1,20 +1,17 @@
-import { Label } from "../ui/Label";
-import type { TLabel } from "../types";
-// eslint-disable-next-line import/named, import/no-extraneous-dependencies
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { Label } from "../components/UI/Label";
+import type { ComponentStory, ComponentMeta } from "@storybook/react";
 
 export default {
   title: "Label",
   component: Label,
 } as ComponentMeta<typeof Label>;
 
-const Template: ComponentStory<typeof Label> = (arg: TLabel) => {
-  return <Label {...arg}></Label>;
-};
+const Template: ComponentStory<typeof Label> = (args) => (
+  <Label {...args}></Label>
+);
 
 export const LabelComponent = Template.bind({});
 LabelComponent.args = {
   children: "Label",
-  className: "",
   isDarkTheme: false,
 };

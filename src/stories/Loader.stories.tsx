@@ -1,16 +1,14 @@
-import { Loader } from "../ui/Loader";
-import type { TLoader } from "../types";
-// eslint-disable-next-line import/named, import/no-extraneous-dependencies
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { Loader } from "../components/UI/Loader";
+import type { ComponentStory, ComponentMeta } from "@storybook/react";
 
 export default {
   title: "Loader",
   component: Loader,
 } as ComponentMeta<typeof Loader>;
 
-const Template: ComponentStory<typeof Loader> = (arg: TLoader) => {
-  return <Loader {...arg}></Loader>;
-};
+const Template: ComponentStory<typeof Loader> = (args) => (
+  <Loader {...args}></Loader>
+);
 
 export const LoaderComponent = Template.bind({});
 LoaderComponent.args = {
