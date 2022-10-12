@@ -1,0 +1,24 @@
+.link {
+  font-family: var(--font-paragraph);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--primary-dark-gray);
+  text-decoration: none;
+  border-bottom: 1px solid var(--primary-dark-gray);
+
+  &:hover {
+    color: var(--primary-black);
+    border-color: var(--primary-black);
+  }
+
+  &_dark {
+    color: var(--primary-light-gray);
+    border-color: var(--primary-light-gray);
+    
+    &:hover {
+      color: var(--primary-white);
+      border-color: var(--primary-white);
+    }
+  }
+}

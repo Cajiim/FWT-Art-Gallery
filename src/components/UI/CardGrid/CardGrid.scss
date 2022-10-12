@@ -1,0 +1,42 @@
+.cardGrid {
+  @mixin for-tablet-up {
+    @media screen and (max-width: 1439px) {
+      @content;
+    }
+  }
+  @mixin for-mobile-up {
+    @media screen and (max-width: 767px) {
+      @content;
+    }
+  } 
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  max-width: 1240px;
+  margin: 0 100px 0 100px;
+  height: 100%;
+
+  @include for-tablet-up {
+    margin: 0 20px 0 20px;
+  }
+  
+  &__item {
+    position: relative;
+    list-style: none;
+    width: 392px;
+    height: 260px;
+    overflow: hidden;
+    cursor: pointer;
+
+    @include for-tablet-up {
+      height: auto;
+      width: calc(100% - 24px / 2);
+      aspect-ratio: 352/220;
+    }
+    @include for-mobile-up {
+      width: 100%;
+      aspect-ratio: 280/185;
+    }
+  }
+}

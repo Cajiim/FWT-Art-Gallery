@@ -1,0 +1,50 @@
+.checkbox {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  &__fake {
+    display: block;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    box-sizing: border-box;
+    background: var(--secondary-white);
+    border: 1px solid var(--primary-light-gray);
+    border-radius: 4px;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 18px;
+      height: 14px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      box-sizing: border-box;
+      background: url(../../../assets/img/checkboxVector.svg) no-repeat;
+    }
+
+    &_dark {
+      border: none;
+      background: var(--primary-black);
+
+      &::before {
+        background: url(../../../assets/img/darkCheckbox.svg) no-repeat;
+      }
+    }
+  }
+  
+  &__input:checked + &__fake::before {
+    opacity: 1;
+    background-size: 100%;
+  }
+}

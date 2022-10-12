@@ -1,0 +1,61 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../../assets/fonts/Cormorants/Inter-Light.woff2") format("woff2")
+    url("../../assets/fonts/Cormorants/Inter-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../../assets/fonts/Cormorants/Inter-Medium.woff2") format("woff2")
+    url("../../assets/fonts/Cormorants/Inter-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../../assets/fonts/Cormorants/Inter-Bold.woff2") format("woff2")
+    url("../../assets/fonts/Cormorants/Inter-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cormorant SC";
+  src: local("Cormorant SC Book"), local("CormorantSC-Book"),
+    url("../../assets/fonts/Cormorants/Cormorantscbook.woff2") format("woff2"),
+    url("../../assets/fonts/Cormorants/Cormorantscbook.woff") format("woff"),
+    url("../../assets/fonts/Cormorants/Cormorantscbook.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cormorant SC";
+  src: local("Cormorant SC Semibold"), local("CormorantSC-Semibold"),
+    url("../../assets/fonts/Cormorants/Cormorantscsemibold.woff2")
+      format("woff2"),
+    url("../../assets/fonts/Cormorants/Cormorantscsemibold.woff") format("woff"),
+    url("../../assets/fonts/Cormorants/Cormorantscsemibold.ttf")
+      format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cormorant SC";
+  src: local("Cormorant SC Bold"), local("CormorantSC-Bold"),
+    url("../../assets/fonts/Cormorants/Cormorantscbold.woff2") format("woff2"),
+    url("../../assets/fonts/Cormorants/Cormorantscbold.woff") format("woff"),
+    url("../../assets/fonts/Cormorants/Cormorantscbold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+:root{
+  --font-heading: 'Cormorant SC'
+  --font-paragraph:'Inter';
+}
+

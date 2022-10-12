@@ -1,0 +1,109 @@
+.toast {
+  @mixin for-mobile-up {
+    @media screen and (max-width: 767px) {
+      @content;
+    }
+  }
+
+  width: 441px;
+  height: 88px;
+
+  @include for-mobile-up {
+    width: 320px;
+    height: 40px;
+  }
+  background: var(--secondary-white);
+  border: 1px solid var(--primary-light-gray);
+  border-radius: 4px;
+
+  &_dark {
+    background: var(--secondary-black);
+  }
+
+  &__container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+  }
+
+  &__jaw {
+    background: var(--accent-error);
+    border-radius: 4px 0px 0px 4px;
+    width: 8px;
+    height: 88px;
+    position: absolute;
+
+    @include for-mobile-up {
+      display: none;
+    }
+  }
+
+  &__errorMessage {
+    display: flex;
+    flex-direction: column;
+    margin: 21px 0 0 0;
+
+    @include for-mobile-up {
+      margin: 12px 0 0 12px;
+    }
+  }
+
+  &__errorIcon {
+    margin: 24px 8px 0 24px;
+
+    @include for-mobile-up {
+      margin: 12px 0 0 12px;
+    }
+  }
+
+  &__error {
+    font-family: var(--font-paragraph);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: var(--accent-error);
+    margin: 0 0 8px 0;
+
+    @include for-mobile-up {
+      display: none;
+    }
+  }
+
+  &__errorText {
+    font-family: var(--font-paragraph);
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 140%;
+    color: var(--primary-dark-gray);
+
+    &_dark {
+      color: var(--primary-light-gray);
+    }
+  }
+  
+  &__closeIcon {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    cursor: pointer;
+    fill: var(--primary-dark-gray);
+
+    &_dark {
+      fill: var(--secondary-gray);
+    }
+
+    @include for-mobile-up {
+      width: 8px;
+      height: 8px;
+      position: absolute;
+      right: 10px;
+      top: 8px;
+      cursor: pointer;
+    }
+  }
+}
