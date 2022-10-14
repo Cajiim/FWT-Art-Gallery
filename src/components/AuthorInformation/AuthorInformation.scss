@@ -1,0 +1,10 @@
+.author {
+  position: relative;
+  max-width: 1240px;
+  margin: 0 0 0 auto !important;
+
+  &__img {
+    max-width: 1000px;
+    max-height: 1000px;
+  }
+}

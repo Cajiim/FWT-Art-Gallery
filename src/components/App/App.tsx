@@ -1,5 +1,6 @@
 import { FC, useState, useEffect } from "react";
 import { Main } from "../../pages/Main";
+import { AuthorPage } from "../../pages/AuthorPage";
 import { useAppDispatch, useAppSelector } from "../../hooks/useReduxHooks";
 import { changeTheme } from "../../redux/reducers/reducerTheme";
 import { useCookies } from "react-cookie";
@@ -26,6 +27,7 @@ const App: FC = () => {
         : document.body.classList.remove("darkTheme");
     dispatch(changeTheme(coockies));
     setTheme(chosenTheme.dark === "false" ? "dark" : "light");
+    console.log("1");
     return () => isDarkTheme;
   }, [chosenTheme.dark, coockies, dispatch, theme]);
 
@@ -33,7 +35,10 @@ const App: FC = () => {
     <ThemeContext.Provider value={providerProps()}>
       <Router>
         <Routes>
-          <Route path="/FWT-Art-Gallery" element={<Main />}></Route>
+          <Route path="/FWT-Art-Gallery" element={<Main />} />
+        </Routes>
+        <Routes>
+          <Route path="/FWT-Art-Gallery/author" element={<AuthorPage />} />
         </Routes>
       </Router>
     </ThemeContext.Provider>

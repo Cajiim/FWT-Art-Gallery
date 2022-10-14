@@ -1,0 +1,14 @@
+.arrow {
+  position: relative;
+  display: flex;
+  fill: var(--primary-dark-gray);
+  transition: 0.5s;
+
+  &_dark {
+    fill: var(--primary-light-gray);
+  }
+
+  &_open {
+    transform: rotate(180deg);
+  }
+}

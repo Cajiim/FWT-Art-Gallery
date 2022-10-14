@@ -1,3 +1,6 @@
+@import url("http://fonts.cdnfonts.com/css/cormorant-sc");
+@import url("https://fonts.googleapis.com/css?family=Inter");
+
 :root {
   --primary-white: #ffffff;
   --primary-black: #121212;
@@ -93,7 +96,7 @@
 }
 
 body {
-  transition: 0.6s cubic-bezier(0, 0, 1, 1);
+  transition: 0.6s none;
 }
 
 .darkTheme {

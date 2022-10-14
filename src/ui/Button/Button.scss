@@ -4,7 +4,7 @@
       @content;
     }
   }
-  
+
   width: 200px;
   height: 47px;
   background: var(--primary-black);
@@ -39,10 +39,11 @@
     }
   }
   &_outlined {
+    border-radius: 0;
     width: auto;
     height: auto;
     background: none;
-    text-decoration: underline;
+    border-bottom: 1px solid var(--primary-dark-gray);
     color: var(--primary-dark-gray);
 
     &:hover {
@@ -58,20 +59,24 @@
     }
     &_dark {
       color: var(--primary-light-gray);
+      border-color: var(--primary-light-gray);
       &:hover {
         color: var(--primary-white);
+        border-color: var(--primary-white);
       }
       &:focus {
         color: var(--primary-white);
+        border-color: var(--primary-white);
       }
       &:disabled {
         color: var(--secondary-gray);
+        border-color: var(--secondary-gray);
       }
     }
   }
 
   &_noUnderline {
-    text-decoration: none;
+    border:none;
   }
   &_medium {
     font-size: 16px;

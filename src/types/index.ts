@@ -38,9 +38,9 @@ export type TInput = {
 };
 
 export type TLabel = {
-  children: string;
-  className: string;
-  other: HTMLAnchorElement;
+  children?: string;
+  className?: string;
+  other?: HTMLAnchorElement;
   isDarkTheme?: boolean;
   isVisible?: boolean;
 };

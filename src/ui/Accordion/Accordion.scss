@@ -1,0 +1,107 @@
+.accordion {
+  position: absolute;
+  width: 604px;
+  height: 552px;
+  background: var(--primary-white);
+
+  &_open {
+    height: 1054px;
+  }
+
+  &_dark {
+    background: var(--primary-black);
+  }
+
+  &__lifeInformation {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Cormorant SC";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    padding: 60px 80px 0 80px !important;
+    color: var(--primary-dark-gray);
+
+    &_dark {
+      color: var(--secondary-gray);
+    }
+  }
+
+  &__nameContainer {
+    font-family: "Cormorant SC";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 73px;
+    border-left: 2px solid var(--accent-red);
+    color: var(--accent-red);
+
+    &_dark {
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+    }
+  }
+
+  &__name {
+    margin: 32px 80px 32px 80px !important;
+  }
+
+  &__dividingLine {
+    border-bottom: 2px solid var(--primary-dark-gray);
+    width: 30px;
+    margin-left: 80px !important;
+
+    &_dark {
+      border-color: var(--primary-light-gray);
+    }
+  }
+
+  &__description {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: justify;
+    margin: 0 80px 0 80px !important;
+    color: var(--primary-dark-gray);
+
+    &_dark {
+      color: var(--primary-light-gray);
+    }
+  }
+
+  &__descriptionText {
+    margin: 20px 0 20px 0 !important;
+  }
+
+  &__genresList {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 32px 80px 0 80px !important;
+  }
+
+  &__button {
+    max-width: 100px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+
+  &__button:hover .arrow {
+    fill: var(--primary-black);
+
+    &_dark {
+      fill: var(--primary-white);
+    }
+  }
+  &__button:hover .button {
+    color: var(--primary-black);
+
+    &_dark {
+      color: var(--primary-white);
+    }
+  }
+}

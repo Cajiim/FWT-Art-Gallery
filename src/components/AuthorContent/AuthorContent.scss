@@ -1,0 +1,23 @@
+.authorContent__artworks {
+  /* Heading/H1 medium 60 */
+  font-family: "Cormorant SC";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 60px;
+  line-height: 73px;
+  /* identical to box height */
+  /* accent/red */
+  color: #9b4b4b;
+  
+  &_dark {
+    /* Heading/H1 medium 60 */
+    font-family: "Cormorant SC";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 73px;
+    /* identical to box height */
+    /* accent/gold */
+    color: #ab8956;
+  }
+}
