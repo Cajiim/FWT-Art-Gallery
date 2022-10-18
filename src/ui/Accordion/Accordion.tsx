@@ -30,27 +30,30 @@ const Accordion: FC<TAccordion> = ({ className, ...args }) => {
         accordion_open: isOpen,
       })}
     >
-      <div
-        className={cn("accordion__authorInfo", {
-          accordion__authorInfo_dark: isDarkTheme,
-        })}
-      >
+      <div className="accordion__authorInfoWrapper">
         <div
-          className={cn("accordion__lifeInformation", {
-            accordion__lifeInformation_dark: isDarkTheme,
+          className={cn("accordion__authorInfo", {
+            accordion__authorInfo_dark: isDarkTheme,
           })}
         >
-          <span>{yearsOfLife}</span>
-          <span>{country}</span>
-        </div>
-        <div
-          className={cn("accordion__nameContainer", {
-            accordion__nameContainer_dark: isDarkTheme,
-          })}
-        >
-          <h1 className="accordion__name">{name}</h1>
+          <div
+            className={cn("accordion__lifeInformation", {
+              accordion__lifeInformation_dark: isDarkTheme,
+            })}
+          >
+            <span>{yearsOfLife}</span>
+            <span>{country}</span>
+          </div>
+          <div
+            className={cn("accordion__nameContainer", {
+              accordion__nameContainer_dark: isDarkTheme,
+            })}
+          >
+            <h1 className="accordion__name">{name}</h1>
+          </div>
         </div>
       </div>
+
       <div
         className={cn("accordion__dividingLine", {
           accordion__dividingLine_dark: isDarkTheme,
@@ -61,7 +64,7 @@ const Accordion: FC<TAccordion> = ({ className, ...args }) => {
           accordion__description_dark: isDarkTheme,
         })}
       >
-        <p className="accordion__descriptionText accordion__descriptionText_open">
+        <p className="accordion__descriptionText">
           {!isOpen ? `${description.substring(0, 256)}...` : description}
         </p>
         <div

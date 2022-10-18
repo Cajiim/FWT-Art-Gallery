@@ -1,3 +1,8 @@
+@mixin for-tablet-up {
+  @media screen and (max-width: 1439px) {
+    @content;
+  }
+}
 @mixin for-small-tablet {
   @media screen and (max-width: 1280px) {
     @content;
@@ -24,14 +29,14 @@
     background: var(--primary-black);
   }
 
-  @include for-small-tablet {
+  @include for-tablet-up {
     width: 100%;
     height: auto;
     background: none;
   }
 
   &__authorInfo {
-    @include for-small-tablet {
+    @include for-tablet-up {
       /* primary/white */
       background: #ffffff;
       width: 72.9166667%;
@@ -70,7 +75,7 @@
       color: var(--secondary-gray);
     }
 
-    @include for-small-tablet {
+    @include for-tablet-up {
       margin: 0 20px 0 20px !important;
       justify-content: start;
       padding: 0 !important;
@@ -101,7 +106,7 @@
       color: var(--accent-gold);
     }
 
-    @include for-small-tablet {
+    @include for-tablet-up {
       bottom: 20px;
       position: absolute;
       font-family: "Cormorant SC";
@@ -122,7 +127,7 @@
     line-height: 73px;
     margin: 32px 80px 32px 80px !important;
 
-    @include for-small-tablet {
+    @include for-tablet-up {
       font-size: 48px;
       line-height: 100%;
       margin: 0 20px 0 20px !important;
@@ -143,7 +148,7 @@
       border-color: var(--primary-light-gray);
     }
 
-    @include for-small-tablet {
+    @include for-tablet-up {
       display: none;
     }
   }
@@ -162,6 +167,10 @@
       color: var(--primary-light-gray);
     }
 
+    @include for-tablet-up {
+      margin: 0 auto 0 auto !important;
+      max-width: 1240px;
+    }
     @include for-small-tablet {
       margin: 0 20px 0 20px !important;
     }
@@ -170,7 +179,7 @@
   &__descriptionText {
     margin: 20px 0 20px 0 !important;
 
-    @include for-small-tablet {
+    @include for-tablet-up {
       margin: 40px 0 20px 0 !important;
     }
     @include for-mobile-up {
@@ -183,6 +192,10 @@
     flex-wrap: wrap;
     margin: 32px 80px 0 80px !important;
 
+    @include for-tablet-up {
+      margin: 20px auto 0 auto !important;
+      max-width: 1240px;
+    }
     @include for-small-tablet {
       margin: 20px 20px 0 20px !important;
     }
@@ -211,7 +224,7 @@
     }
   }
 
-  @include for-small-tablet {
+  @include for-tablet-up {
     position: relative;
   }
 }
