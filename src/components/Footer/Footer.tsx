@@ -22,7 +22,7 @@ const Footer: FC<TFooter> = ({ ...other }) => {
       >
         <p>Проект реализован в рамках стажировки</p>
         <p>
-          для Frontend-разработчиков от компании &nbsp;
+          {"для Frontend-разработчиков от компании "}
           <Link link="https://framework.team/" isDarkTheme={other.isDarkTheme}>
             Framework Team
           </Link>

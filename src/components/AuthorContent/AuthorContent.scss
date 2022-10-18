@@ -1,15 +1,30 @@
-.authorContent__artworks {
-  /* Heading/H1 medium 60 */
-  font-family: "Cormorant SC";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 60px;
-  line-height: 73px;
-  /* identical to box height */
-  /* accent/red */
-  color: #9b4b4b;
-  
-  &_dark {
+@mixin for-tablet-up {
+  @media screen and (max-width: 1439px) {
+    @content;
+  }
+}
+@mixin for-small-tablet {
+  @media screen and (max-width: 1280px) {
+    @content;
+  }
+}
+@mixin for-mobile-up {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+.authorContent {
+  &__artworksWrapper {
+    max-width: 1240px;
+    margin: 0 auto !important;
+
+    @include for-small-tablet {
+      margin: 0 20px 0 20px !important;
+    }
+  }
+
+  &__artworks {
     /* Heading/H1 medium 60 */
     font-family: "Cormorant SC";
     font-style: normal;
@@ -17,7 +32,27 @@
     font-size: 60px;
     line-height: 73px;
     /* identical to box height */
-    /* accent/gold */
-    color: #ab8956;
+    /* accent/red */
+    color: #9b4b4b;
+    margin: 160px 0 0 80px !important;
+
+    @include for-small-tablet {
+      margin: 98px 0 60px 0!important;
+    }
+    @include for-mobile-up {
+      margin: 60px 20px 60px 20px !important;
+    }
+
+    &_dark {
+      /* Heading/H1 medium 60 */
+      font-family: "Cormorant SC";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 60px;
+      line-height: 73px;
+      /* identical to box height */
+      /* accent/gold */
+      color: #ab8956;
+    }
   }
 }

@@ -15,13 +15,15 @@ const AuthorContent: FC<TAuthorContent> = ({ ...args }) => {
   return (
     <>
       <AuthorInformation isDarkTheme={isDarkTheme} />
-      <h1
-        className={cn("authorContent__artworks", {
-          authorContent__artworks_dark: isDarkTheme,
-        })}
-      >
-        Artworks
-      </h1>
+      <div className="authorContent__artworksWrapper">
+        <h1
+          className={cn("authorContent__artworks", {
+            authorContent__artworks_dark: isDarkTheme,
+          })}
+        >
+          Artworks
+        </h1>
+      </div>
       <CardGrid isDarkTheme={isDarkTheme} />
     </>
   );

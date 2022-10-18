@@ -1,8 +1,20 @@
+@mixin for-small-tablet {
+  @media screen and (max-width: 1280px) {
+    @content;
+  }
+}
+@mixin for-mobile-up {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
 .accordion {
   position: absolute;
   width: 604px;
   height: 552px;
   background: var(--primary-white);
+  z-index: 2;
 
   &_open {
     height: 1054px;
@@ -10,6 +22,37 @@
 
   &_dark {
     background: var(--primary-black);
+  }
+
+  @include for-small-tablet {
+    width: 100%;
+    height: auto;
+    background: none;
+  }
+
+  &__authorInfo {
+    @include for-small-tablet {
+      /* primary/white */
+      background: #ffffff;
+      width: 72.9166667%;
+      min-width: 560px;
+      height: 119px;
+      top: -158px;
+      position: absolute;
+      z-index: 1;
+      transition: 0.6s;
+
+      &_dark {
+        /* primary/black */
+        background: #121212;
+      }
+    }
+
+    @include for-mobile-up {
+      width: 100%;
+      min-width: 300px;
+      top: -138px;
+    }
   }
 
   &__lifeInformation {
@@ -26,14 +69,30 @@
     &_dark {
       color: var(--secondary-gray);
     }
+
+    @include for-small-tablet {
+      margin: 0 20px 0 20px !important;
+      justify-content: start;
+      padding: 0 !important;
+      top: 20px;
+      gap: 174px;
+      position: absolute;
+    }
+    @include for-mobile-up {
+      font-size: 12px;
+      line-height: 15px;
+      flex-direction: column;
+      gap: 48px;
+    }
   }
 
   &__nameContainer {
     font-family: "Cormorant SC";
     font-style: normal;
     font-weight: 500;
-    font-size: 30px;
+    font-size: 60px;
     line-height: 73px;
+
     border-left: 2px solid var(--accent-red);
     color: var(--accent-red);
 
@@ -41,10 +100,38 @@
       border-color: var(--accent-gold);
       color: var(--accent-gold);
     }
+
+    @include for-small-tablet {
+      bottom: 20px;
+      position: absolute;
+      font-family: "Cormorant SC";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 48px;
+      line-height: 100%;
+    }
+    @include for-mobile-up {
+      top: 43px;
+      bottom: 43px;
+      border: none;
+    }
   }
 
   &__name {
+    font-size: 60px;
+    line-height: 73px;
     margin: 32px 80px 32px 80px !important;
+
+    @include for-small-tablet {
+      font-size: 48px;
+      line-height: 100%;
+      margin: 0 20px 0 20px !important;
+    }
+    @include for-mobile-up {
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 100%;
+    }
   }
 
   &__dividingLine {
@@ -54,6 +141,10 @@
 
     &_dark {
       border-color: var(--primary-light-gray);
+    }
+
+    @include for-small-tablet {
+      display: none;
     }
   }
 
@@ -70,16 +161,31 @@
     &_dark {
       color: var(--primary-light-gray);
     }
+
+    @include for-small-tablet {
+      margin: 0 20px 0 20px !important;
+    }
   }
 
   &__descriptionText {
     margin: 20px 0 20px 0 !important;
+
+    @include for-small-tablet {
+      margin: 40px 0 20px 0 !important;
+    }
+    @include for-mobile-up {
+      margin: 20px 0 20px 0 !important;
+    }
   }
 
   &__genresList {
     display: flex;
     flex-wrap: wrap;
     margin: 32px 80px 0 80px !important;
+
+    @include for-small-tablet {
+      margin: 20px 20px 0 20px !important;
+    }
   }
 
   &__button {
@@ -103,5 +209,9 @@
     &_dark {
       color: var(--primary-white);
     }
+  }
+
+  @include for-small-tablet {
+    position: relative;
   }
 }

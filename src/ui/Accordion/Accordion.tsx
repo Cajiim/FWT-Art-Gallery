@@ -31,19 +31,25 @@ const Accordion: FC<TAccordion> = ({ className, ...args }) => {
       })}
     >
       <div
-        className={cn("accordion__lifeInformation", {
-          accordion__lifeInformation_dark: isDarkTheme,
+        className={cn("accordion__authorInfo", {
+          accordion__authorInfo_dark: isDarkTheme,
         })}
       >
-        <span>{yearsOfLife}</span>
-        <span>{country}</span>
-      </div>
-      <div
-        className={cn("accordion__nameContainer", {
-          accordion__nameContainer_dark: isDarkTheme,
-        })}
-      >
-        <h1 className="accordion__name">{name}</h1>
+        <div
+          className={cn("accordion__lifeInformation", {
+            accordion__lifeInformation_dark: isDarkTheme,
+          })}
+        >
+          <span>{yearsOfLife}</span>
+          <span>{country}</span>
+        </div>
+        <div
+          className={cn("accordion__nameContainer", {
+            accordion__nameContainer_dark: isDarkTheme,
+          })}
+        >
+          <h1 className="accordion__name">{name}</h1>
+        </div>
       </div>
       <div
         className={cn("accordion__dividingLine", {
@@ -55,7 +61,7 @@ const Accordion: FC<TAccordion> = ({ className, ...args }) => {
           accordion__description_dark: isDarkTheme,
         })}
       >
-        <p className="accordion__descriptionText">
+        <p className="accordion__descriptionText accordion__descriptionText_open">
           {!isOpen ? `${description.substring(0, 256)}...` : description}
         </p>
         <div
@@ -68,7 +74,7 @@ const Accordion: FC<TAccordion> = ({ className, ...args }) => {
             isDarkTheme={isDarkTheme}
             isOutlined={true}
           >
-            {"Read more"}
+            {!isOpen ? "Read more" : "Read less"}
           </Button>
           <Arrow isDarkTheme={isDarkTheme} isOpen={isOpen} />
         </div>

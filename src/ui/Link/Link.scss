@@ -1,3 +1,9 @@
+@mixin for-mobile-up {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
 .link {
   font-family: "Inter";
   font-style: normal;
@@ -28,5 +34,10 @@
     width: 24px;
     height: 24px;
     border: none;
+  }
+
+  @include for-mobile-up {
+    font-size: 12px;
+    line-height: 140%;
   }
 }

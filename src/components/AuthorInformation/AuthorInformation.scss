@@ -1,10 +1,76 @@
+@mixin for-tablet-up {
+  @media screen and (max-width: 1439px) {
+    @content;
+  }
+}
+@mixin for-small-tablet {
+  @media screen and (max-width: 1280px) {
+    @content;
+  }
+}
+@mixin for-mobile-up {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
 .author {
   position: relative;
   max-width: 1240px;
-  margin: 0 0 0 auto !important;
+  margin: 0 auto !important;
+
+  @include for-small-tablet {
+    margin: 0 !important;
+  }
+
+  &__backButton {
+    display: flex;
+    max-width: 70px;
+    max-height: 24px;
+    margin: 56px 0 28px 0 !important;
+
+    @include for-small-tablet {
+      margin: 56px 20px 28px 20px !important;
+    }
+  }
+
+  &__arrow {
+    margin: 0 16px 0 0 !important;
+  }
+
+  &__accordionWrapper {
+    position: absolute;
+    top: 107px;
+
+    @include for-small-tablet {
+      position: relative;
+      top: 0px;
+    }
+  }
 
   &__img {
-    max-width: 1000px;
-    max-height: 1000px;
+    position: relative;
+    overflow: hidden;
+    width: 1000px;
+    height: 1000px;
+    object-fit: cover;
+    margin: 0 0 0 340px !important;
+
+    @include for-small-tablet {
+      margin: 0 !important;
+      width: 100vw;
+      height: auto;
+      position: relative;
+      object-fit: cover;
+      aspect-ratio: 768/500;
+    }
+    @include for-mobile-up {
+      aspect-ratio: 320/452;
+    }
+  }
+
+  &__imgContainer {
+    position: relative;
+    overflow: hidden;
   }
 }

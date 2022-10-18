@@ -1,6 +1,7 @@
 import { FC } from "react";
 import classNames from "classnames";
 import { Button } from "../../../ui/Button";
+import { MenuItem } from "../../../ui/MenuItem";
 import { ThemeIcon } from "../../../ui/ThemeIcon";
 import styles from "./Menu.scss";
 const cn = classNames.bind(styles);
@@ -43,24 +44,20 @@ const Menu: FC<TMenu> = ({ isOpen, onClick, setIsOpen, ...other }) => {
             </Button>
           </div>
           <div className="menu__authorization">
-            <Button
+            <MenuItem
               onClick={() => {}}
               isDarkTheme={other.isDarkTheme}
-              isOutlined={true}
-              className="button_noUnderline"
-              size="large"
+              className="menuItem_large"
             >
               {"Log In"}
-            </Button>
-            <Button
+            </MenuItem>
+            <MenuItem
               onClick={() => {}}
               isDarkTheme={other.isDarkTheme}
-              isOutlined={true}
-              className="button_noUnderline"
-              size="large"
+              className="menuItem_large"
             >
               {"Sign Up"}
-            </Button>
+            </MenuItem>
           </div>
         </div>
       </div>

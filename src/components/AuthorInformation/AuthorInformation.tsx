@@ -29,25 +29,23 @@ const AuthorInformation: FC<TAuthorInformation> = ({ ...args }) => {
         author_dark: isDarkTheme,
       })}
     >
-      <div>
-        <div>
+      <div className="author__backButton">
+        <div className="author__arrow">
           <Arrow fill={!isDarkTheme ? "#575757" : "#DEDEDE"} />
-          <Button
-            isOutlined={true}
-            onClick={() => {}}
-            isDarkTheme={isDarkTheme}
-          >
-            {"back"}
-          </Button>
         </div>
-        <div>
-          <Accordion data={data} isDarkTheme={isDarkTheme} />
-          <img
-            src="https://www.figma.com/file/UHg2LdpfSoM8XBrzrqocs6/image/f9083c0b624bb08c9a12c4c2ce6c5bd2d14667a6?fuid=1151076368311196868"
-            alt="authorImg"
-            className="author__img"
-          />
-        </div>
+        <Button isOutlined={true} onClick={() => {}} isDarkTheme={isDarkTheme}>
+          {"back"}
+        </Button>
+      </div>
+      <div className="author_imgContainer">
+        <img
+          src="https://www.figma.com/file/UHg2LdpfSoM8XBrzrqocs6/image/f9083c0b624bb08c9a12c4c2ce6c5bd2d14667a6?fuid=1151076368311196868"
+          alt="authorImg"
+          className="author__img"
+        />
+      </div>
+      <div className="author__accordionWrapper">
+        <Accordion data={data} isDarkTheme={isDarkTheme} />
       </div>
     </div>
   );

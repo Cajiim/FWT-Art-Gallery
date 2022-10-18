@@ -1,0 +1,36 @@
+.menuItem {
+  font-family: "Cormorant SC";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 128%;
+  /* or 20px */
+  text-transform: uppercase;
+  /* primary/dark gray */
+  color: #575757;
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  &:hover {
+    /* primary/black */
+    color: #121212;
+  }
+
+  &_dark {
+    /* primary/light gray */
+    color: #dedede;
+
+    &:hover {
+      /* primary/white */
+      color: #ffffff;
+    }
+  }
+
+  &_large {
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 73px;
+  }
+}
