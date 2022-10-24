@@ -40,8 +40,8 @@
   }
   &_outlined {
     border-radius: 0;
+    height: 100%;
     width: auto;
-    height: auto;
     background: none;
     border-bottom: 1px solid var(--primary-dark-gray);
     color: var(--primary-dark-gray);
@@ -76,7 +76,7 @@
   }
 
   &_noUnderline {
-    border:none;
+    border: none;
   }
   &_medium {
     font-size: 16px;

@@ -1,13 +1,9 @@
-import { ReactNode } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 
-export type TButton = {
-  className?: string;
-  children: string;
-  onClick: () => void;
+export type TButton = HTMLAttributes<HTMLButtonElement> & {
   isDisabled?: boolean;
   isOutlined?: boolean;
   isDarkTheme?: boolean;
-  other?: HTMLButtonElement;
   size?: string;
 };
 

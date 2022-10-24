@@ -58,6 +58,7 @@
       }
     ],
     "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "import/no-unresolved": [2, { "ignore": ["swiper"] }],
     "jsx-a11y/click-events-have-key-events": "off"
   },
   "overrides": [

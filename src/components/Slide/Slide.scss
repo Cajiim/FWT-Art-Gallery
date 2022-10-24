@@ -1,0 +1,243 @@
+$backgroundcolor: #ffffff;
+$backgroundcolor-dark: #1a1818;
+
+@mixin for-tablet-up {
+  @media screen and (max-width: 1439px) {
+    @content;
+  }
+}
+@mixin for-small-tablet {
+  @media screen and (max-width: 1280px) {
+    @content;
+  }
+}
+@mixin for-mobile-up {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+.slide {
+  &__img {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    object-fit: cover;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 60px auto 0 auto !important;
+    cursor: pointer;
+
+    @include for-small-tablet {
+      margin: 40px 40px 0 40px !important;
+    }
+    @include for-mobile-up {
+      margin: 20px 20px 0 20px !important;
+    }
+  }
+
+  &__recoverButton {
+    display: flex;
+    position: relative;
+    align-items: center;
+    gap: 12px;
+    z-index: 1;
+  }
+
+  &__paintRecover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* primary/white */
+    background: rgba($backgroundcolor, 0.1);
+    border-radius: 4px;
+    width: 28px;
+    height: 28px;
+    /* primary/light gray */
+    fill: #dedede;
+
+    &:hover {
+      /* primary/white */
+      fill: #ffffff;
+    }
+
+    &_dark {
+      /* secondary/black */
+      background: rgba($backgroundcolor-dark, 0.1);
+    }
+  }
+
+  &__recoverButton:hover .button {
+    color: var(--primary-white);
+  }
+  &__recoverButton:hover &__paintRecover {
+    fill: var(--primary-white);
+  }
+
+  &__slideContainer {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__curtain {
+    width: 498px;
+    height: 122px;
+    z-index: 1;
+    position: relative;
+    /* secondary/white */
+    background: #fcfcfc;
+
+    &_dark {
+      /* primary/black */
+      background: #121212;
+    }
+
+    @include for-mobile-up {
+      width: 253px;
+      height: 68px;
+      /*  position: absolute;
+    bottom: 0; */
+    }
+  }
+  &__curtainButtons {
+    position: absolute;
+    display: flex;
+    gap: 20px;
+    right: 20px;
+    top: 20px;
+
+    @include for-mobile-up {
+      position: absolute;
+      display: flex;
+      gap: 20px;
+      left: 20px;
+      top: 100px;
+    }
+  }
+  &__information {
+    max-width: 1200px;
+    margin: 496px auto 0 auto !important;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    &_coverRemove {
+      display: none;
+    }
+
+    @include for-small-tablet {
+      position: absolute;
+      bottom: 20px;
+      width: calc(100% - 80px);
+      margin: 0 40px 0 40px !important;
+    }
+    @include for-mobile-up {
+      position: absolute;
+      margin: 0 !important;
+      bottom: 80px;
+      width: 100vw;
+    }
+  }
+
+  &__description {
+    /* accent/red */
+    border-left: 2px solid #9b4b4b;
+    padding: 0 0 0 20px !important;
+    position: absolute;
+    top: 40px;
+
+    &_dark {
+      /* accent/gold */
+      border-color: #ab8956;
+    }
+
+    @include for-mobile-up {
+      border: none;
+      top: 0px;
+      padding: 0 0 0 12px !important;
+    }
+  }
+
+  &__year {
+    /* Button/bold 12 uppercase */
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+    text-transform: uppercase;
+
+    margin: 0 0 8px 0;
+    /* accent/red */
+    color: #9b4b4b;
+
+    &_dark {
+      /* accent/gold */
+      color: #ab8956;
+    }
+
+    @include for-mobile-up {
+      margin: 16px 0 4px 0 !important;
+      font-size: 8px;
+      line-height: 10px;
+      position: relative;
+    }
+  }
+
+  &__name {
+    /* Heading/H4 medium 16 uppercase */
+    font-family: "Cormorant SC";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: uppercase;
+    /* primary/black */
+    color: #121212;
+
+    &_dark {
+      /* primary/white */
+      color: #ffffff;
+    }
+
+    @include for-mobile-up {
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+
+  &__fraction {
+    z-index: 1;
+    position: relative;
+    color: white;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+
+    /* Heading/H3 semibold 32 */
+    font-family: "Cormorant SC";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 100%;
+    /* identical to box height, or 32px */
+    /* primary/light gray */
+    color: #dedede;
+
+    @include for-mobile-up {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 20px;
+      position: absolute;
+      right: 20px;
+      top: 100px;
+    }
+  }
+}

@@ -1,16 +1,32 @@
 .closeIcon {
-  position: relative;
-  width: 8px;
-  height: 8px;
-  fill: var(--primary-dark-gray);
   display: none;
-  padding: 0 0 4px 0 !important;
-  cursor: pointer;
 
   &_dark {
     fill: var(--primary-light-gray);
   }
+
   &_visible {
     display: block;
+    position: relative;
+    width: 8px;
+    height: 8px;
+    fill: var(--primary-dark-gray);
+    padding: 0 0 4px 0 !important;
+    cursor: pointer;
+  }
+
+  &__slide {
+    width: 16px;
+    height: 16px;
+    /* primary/light gray */
+    fill: #dedede;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    
+    &:hover {
+      /* primary/white */
+      fill: #ffffff;
+    }
   }
 }
