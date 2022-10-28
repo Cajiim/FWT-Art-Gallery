@@ -1,0 +1,93 @@
+@import url("https://rsms.me/inter/inter.css");
+
+.delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: rgba(3, 3, 3, 0.3);
+
+  &_dark {
+    background: rgba(3, 3, 3, 0.6);
+  }
+
+  &__closeIcon {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    cursor: pointer;
+
+    &_dark {
+      /* secondary/gray */
+      fill: #9c9c9c;
+    }
+  }
+
+  &__iconContainer {
+    margin: 80px 0 32px 0 !important;
+
+    &_dark {
+      /* secondary/gray */
+      fill: #9c9c9c;
+    }
+  }
+
+  &__question {
+    /* Paragraph base/medium 16 */
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    /* or 22px */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 0 43px 0 43px !important;
+
+    &_dark {
+      /* primary/light gray */
+      color: #dedede;
+    }
+  }
+
+  &__confirmation {
+    /* Paragraph small/light 12 */
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 140%;
+    /* or 17px */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    /* secondary/gray */
+    color: #9c9c9c;
+    margin: 12px 40px 32px 40px !important;
+  }
+
+  &__container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 319px;
+    height: 397px;
+    /* secondary/white */
+    background: #fcfcfc;
+
+    &_dark {
+      /* primary/black */
+      background: #121212;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+}
