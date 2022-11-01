@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import { Accordion } from "../../ui/Accordion";
 import { Button } from "../../ui/Button";
-import { Delete } from "../Modals/Delete";
+import { Delete } from "../Modals/DeleteAuthor";
 import { ReactComponent as Arrow } from "../../assets/img/authorArrow.svg";
 import { ReactComponent as DeleteIcon } from "../../assets/img/delete.svg";
 import { ReactComponent as Edit } from "../../assets/img/edit.svg";

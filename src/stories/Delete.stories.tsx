@@ -1,4 +1,4 @@
-import { Delete } from "../components/Modals/Delete";
+import { Delete } from "../components/Modals/DeleteAuthor";
 import "../styles/breakpoints/breakpoints.scss";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
