@@ -24,9 +24,10 @@
     max-width: none;
   }
 
-  &__backButton {
+  &__buttonWraper {
     display: flex;
-    max-width: 70px;
+    justify-content: space-between;
+    max-width: 1240px;
     max-height: 24px;
     margin: 56px 0 28px 0 !important;
 
@@ -34,9 +35,23 @@
       margin: 56px auto 28px auto !important;
       max-width: 1240px;
     }
-    @include for-small-tablet  {
+    @include for-small-tablet {
       margin: 56px 20px 28px 20px !important;
       max-width: 1240px;
+    }
+  }
+
+  &__backButton {
+    display: flex;
+    align-items: center;
+  }
+
+  &__buttons {
+    display: none;
+
+    &_guest {
+      display: flex;
+      gap: 20px;
     }
   }
 

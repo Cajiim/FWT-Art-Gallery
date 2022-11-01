@@ -23,10 +23,25 @@
     position: relative;
     z-index: 1;
     cursor: pointer;
-    
+
     &:hover {
       /* primary/white */
       fill: #ffffff;
+    }
+  }
+
+  &__auth {
+    width: 16px;
+    height: 16px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    /* primary/dark gray */
+    fill: #575757;
+
+    &_dark {
+      /* secondary/gray */
+      fill: #9c9c9c;
     }
   }
 }

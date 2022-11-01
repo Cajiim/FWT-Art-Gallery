@@ -1,4 +1,5 @@
-import { FC } from "react";
+import { FC, Dispatch } from "react";
+import { createPortal } from "react-dom";
 import classNames from "classnames";
 import { ReactComponent as DeleteIcon } from "../../../assets/img/deleteIconLarge.svg";
 import { ReactComponent as Close } from "../../../assets/img/closeIconLarge.svg";
@@ -8,28 +9,35 @@ import styles from "./Delete.scss";
 const cn = classNames.bind(styles);
 
 type TDelete = {
-  isDarkTheme: boolean;
+  isDarkTheme?: boolean;
   title: string;
-  isOpen: boolean;
+  isOpen?: boolean;
+  setIsOpen: Dispatch<React.SetStateAction<boolean>>;
 };
 
-const Delete: FC<TDelete> = ({ isDarkTheme, title, isOpen }) => {
-  return (
+const Delete: FC<TDelete> = ({ isDarkTheme, title, isOpen, setIsOpen }) => {
+  return createPortal(
     <div
       className={cn("delete", {
         delete_dark: isDarkTheme,
         delete_open: isOpen,
       })}
+      onClick={() => setIsOpen(false)}
+      aria-hidden
     >
       <div
         className={cn("delete__container", {
           delete__container_dark: isDarkTheme,
         })}
+        onClick={(e) => e.stopPropagation()}
+        aria-hidden
       >
         <div
           className={cn("delete__closeIcon", {
             delete__closeIcon_dark: isDarkTheme,
           })}
+          onClick={() => setIsOpen(false)}
+          aria-hidden
         >
           <Close width="16px" height="16px" />
         </div>
@@ -52,12 +60,17 @@ const Delete: FC<TDelete> = ({ isDarkTheme, title, isOpen }) => {
         </p>
         <div className="delete__buttons">
           <Button isDarkTheme={isDarkTheme}>{"Delete"}</Button>
-          <Button isOutlined isDarkTheme={isDarkTheme}>
+          <Button
+            isOutlined
+            isDarkTheme={isDarkTheme}
+            onClick={() => setIsOpen(false)}
+          >
             {"Cancel"}
           </Button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.getElementById("modal") as HTMLElement
   );
 };
 

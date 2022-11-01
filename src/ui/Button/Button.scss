@@ -76,9 +76,6 @@
     }
   }
 
-  &_noUnderline {
-    border: none;
-  }
   &_medium {
     font-size: 16px;
     line-height: 20px;
@@ -90,6 +87,85 @@
     @include for-mobile-up {
       font-size: 32px;
       line-height: 100%;
+    }
+  }
+
+  &__auth {
+    /* Paragraph base/light 16 */
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 140%;
+    /* or 22px */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    /* primary/dark gray */
+    color: #575757;
+    text-transform: none;
+    max-height: 20px;
+    align-self: end;
+
+    &:hover {
+      /* primary/black */
+      color: #121212;
+    }
+    &:focus {
+      /* primary/black */
+      color: #121212;
+    }
+
+    &_dark {
+      /* primary/white */
+      color: #ffffff;
+
+      &:hover {
+        /* primary/white */
+        color: #ffffff;
+      }
+      &:focus {
+        /* primary/white */
+        color: #ffffff;
+      }
+    }
+  }
+
+  &__pictoral {
+    width: 28px;
+    height: 28px;
+    /* secondary/white */
+    background: #fcfcfc;
+    border-radius: 4px;
+    /* primary/dark gray */
+    fill: #575757;
+    &:hover {
+      background: #fcfcfc;
+      box-shadow: none;
+      fill: #121212;
+    }
+    &:focus {
+      background: #fcfcfc;
+      fill: #121212;
+    }
+
+    &_dark {
+      /* secondary/black */
+      background: #1a1818;
+      /* primary/light gray */
+      fill: #dedede;
+
+      &:hover {
+        background: #1a1818;
+        box-shadow: none;
+        /* primary/white */
+        fill: #ffffff;
+      }
+      &:focus {
+        background: #1a1818;
+        /* primary/white */
+        fill: #ffffff;
+      }
     }
   }
 }

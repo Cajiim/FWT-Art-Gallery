@@ -25,12 +25,13 @@ export type TCheckbox = {
 };
 
 export type TInput = {
-  className: string;
-  other: HTMLInputElement;
+  className?: string;
+  other?: HTMLInputElement;
   isDarkTheme?: boolean;
   isError?: boolean;
   placeholder?: string;
   errorMessage?: string;
+  children: ReactNode;
 };
 
 export type TLabel = {

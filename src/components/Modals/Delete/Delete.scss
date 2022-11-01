@@ -1,12 +1,25 @@
 @import url("https://rsms.me/inter/inter.css");
 
+@mixin for-mobile-up {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
 .delete {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-  background: rgba(3, 3, 3, 0.3);
+  display: none;
+
+  &_open {
+    height: 100vh;
+    width: 100vw;
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(3, 3, 3, 0.3);
+    z-index: 10;
+  }
 
   &_dark {
     background: rgba(3, 3, 3, 0.6);
@@ -77,10 +90,23 @@
     height: 397px;
     /* secondary/white */
     background: #fcfcfc;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
 
     &_dark {
       /* primary/black */
       background: #121212;
+    }
+
+    @include for-mobile-up {
+      width: 100vw;
+      height: 40.7732865%;
+      top: auto;
+      left: auto;
+      transform: none;
+      bottom: 0;
     }
   }
 

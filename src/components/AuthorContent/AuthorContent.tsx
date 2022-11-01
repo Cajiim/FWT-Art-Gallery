@@ -14,7 +14,7 @@ const AuthorContent: FC<TAuthorContent> = ({ ...args }) => {
   const { isDarkTheme } = args;
   return (
     <>
-      <AuthorInformation isDarkTheme={isDarkTheme} />
+      <AuthorInformation isDarkTheme={isDarkTheme} isAuthorized />
       <div className="authorContent__artworksWrapper">
         <h1
           className={cn("authorContent__artworks", {

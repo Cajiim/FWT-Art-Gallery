@@ -23,12 +23,19 @@
   max-width: 1240px;
   position: relative;
 
- 
   @include for-small-tablet {
     margin: 0 20px 0 20px !important;
   }
   @include for-mobile-up {
     height: 64px;
+  }
+
+  &_guest {
+    margin: 0 auto 100px auto !important;
+
+    @include for-mobile-up {
+      margin: 0 auto 80px auto !important;
+    }
   }
 
   &__navigation {

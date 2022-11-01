@@ -15,6 +15,7 @@ const AuthorPage: FC = () => {
       <Header
         isDarkTheme={chosenTheme.dark === "false" ? true : false}
         toggle={toggle}
+        isAuthorized={true}
       />
       <main className="main-wrapper__content">
         <AuthorContent

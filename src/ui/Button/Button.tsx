@@ -12,6 +12,7 @@ const Button: FC<TButton> = ({ children, onClick, ...other }) => {
         button_outlined: other.isOutlined,
         button_outlined_dark: other.isDarkTheme && other.isOutlined,
         [`button_${other.size}`]: other.size,
+        [`${other.className}_dark`]: other.isDarkTheme,
       })}
       disabled={other.isDisabled}
       onClick={onClick}

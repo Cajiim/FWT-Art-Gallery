@@ -5,26 +5,57 @@ import { Logo } from "../Logo";
 import { MenuItem } from "../../ui/MenuItem";
 import { ThemeIcon } from "../../ui/ThemeIcon";
 import { Menu } from "../Modals/Menu";
+import { AuthModal } from "../Modals/AuthModal";
 import styles from "./Header.scss";
 const cn = classNames.bind(styles);
 
-const Header: FC<TTheme> = ({ isDarkTheme, toggle }) => {
+type THeader = TTheme & {
+  isAuthorized: boolean;
+};
+
+const Header: FC<THeader> = ({ isDarkTheme, toggle, isAuthorized }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isAuthOpen, setIsAuthOpen] = useState<boolean>(false);
+  const [isLogIn, setIsLogIn] = useState<boolean>(true);
   const handlClickBurger = () => {
     setIsOpen(!isOpen);
   };
   return (
-    <header className="header">
+    <header
+      className={cn("header", {
+        header_guest: !isAuthorized,
+      })}
+    >
       <Logo isDarkTheme={isDarkTheme} />
       <nav className="header__navigation">
-        <div className="header__buttons">
-          <MenuItem onClick={() => {}} isDarkTheme={isDarkTheme}>
-            {"log in"}
-          </MenuItem>
-          <MenuItem onClick={() => {}} isDarkTheme={isDarkTheme}>
-            {"sign up"}
-          </MenuItem>
-        </div>
+        {!isAuthorized ? (
+          <div className="header__buttons">
+            <MenuItem
+              onClick={() => {
+                setIsAuthOpen(!isAuthOpen);
+                setIsLogIn(true);
+              }}
+              isDarkTheme={isDarkTheme}
+            >
+              {"log in"}
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                setIsAuthOpen(!isAuthOpen);
+                setIsLogIn(false);
+              }}
+              isDarkTheme={isDarkTheme}
+            >
+              {"sign up"}
+            </MenuItem>
+          </div>
+        ) : (
+          <div className="header__buttons">
+            <MenuItem isDarkTheme={isDarkTheme} onClick={() => {}}>
+              {"Log Out"}
+            </MenuItem>
+          </div>
+        )}
         <ThemeIcon isDarkTheme={isDarkTheme} onClick={toggle} />
       </nav>
       <li
@@ -41,6 +72,13 @@ const Header: FC<TTheme> = ({ isDarkTheme, toggle }) => {
         setIsOpen={setIsOpen}
         isDarkTheme={isDarkTheme}
         onClick={toggle}
+      />
+      <AuthModal
+        isLogIn={isLogIn}
+        setIsLogIn={setIsLogIn}
+        isAuthOpen={isAuthOpen}
+        setIsAuthOpen={setIsAuthOpen}
+        isDarkTheme={isDarkTheme}
       />
     </header>
   );

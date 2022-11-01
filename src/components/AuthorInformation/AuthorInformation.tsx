@@ -1,7 +1,10 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { Accordion } from "../../ui/Accordion";
 import { Button } from "../../ui/Button";
+import { Delete } from "../Modals/Delete";
 import { ReactComponent as Arrow } from "../../assets/img/authorArrow.svg";
+import { ReactComponent as DeleteIcon } from "../../assets/img/delete.svg";
+import { ReactComponent as Edit } from "../../assets/img/edit.svg";
 import classNames from "classnames";
 import styles from "./AuthorInformation.scss";
 
@@ -9,10 +12,12 @@ const cn = classNames.bind(styles);
 
 type TAuthorInformation = {
   isDarkTheme?: boolean;
+  isAuthorized?: boolean;
 };
 
 const AuthorInformation: FC<TAuthorInformation> = ({ ...args }) => {
-  const { isDarkTheme } = args;
+  const { isDarkTheme, isAuthorized } = args;
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const data = {
     yearsOfLife: "29 july 1800 - 2 may 1900",
     country: "Feodosia, Russian Empire",
@@ -22,21 +27,44 @@ const AuthorInformation: FC<TAuthorInformation> = ({ ...args }) => {
     genres: ["Romanticism", "Realistic", "Art", "Nature", "Bataille"],
     id: "1",
   };
-
+  console.log(isOpen, "isOpen");
   return (
     <div
       className={cn("author", {
         author_dark: isDarkTheme,
       })}
     >
-      <div className="author__backButton">
-        <div className="author__arrow">
-          <Arrow fill={!isDarkTheme ? "#575757" : "#DEDEDE"} />
+      <div className="author__buttonWraper">
+        <div className="author__backButton">
+          <div className="author__arrow">
+            <Arrow fill={!isDarkTheme ? "#575757" : "#DEDEDE"} />
+          </div>
+          <Button
+            isOutlined={true}
+            onClick={() => {}}
+            isDarkTheme={isDarkTheme}
+          >
+            {"back"}
+          </Button>
         </div>
-        <Button isOutlined={true} onClick={() => {}} isDarkTheme={isDarkTheme}>
-          {"back"}
-        </Button>
+        <div
+          className={cn("author__buttons", {
+            author__buttons_guest: isAuthorized,
+          })}
+        >
+          <Button className="button__pictoral" isDarkTheme={isDarkTheme}>
+            <Edit />
+          </Button>
+          <Button
+            className="button__pictoral"
+            isDarkTheme={isDarkTheme}
+            onClick={() => setIsOpen(true)}
+          >
+            <DeleteIcon />
+          </Button>
+        </div>
       </div>
+
       <img
         src="https://www.figma.com/file/UHg2LdpfSoM8XBrzrqocs6/image/f9083c0b624bb08c9a12c4c2ce6c5bd2d14667a6?fuid=1151076368311196868"
         alt="authorImg"
@@ -45,6 +73,12 @@ const AuthorInformation: FC<TAuthorInformation> = ({ ...args }) => {
       <div className="author__accordionWrapper">
         <Accordion data={data} isDarkTheme={isDarkTheme} />
       </div>
+      <Delete
+        isDarkTheme={isDarkTheme}
+        title={"artist profile?"}
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+      />
     </div>
   );
 };
