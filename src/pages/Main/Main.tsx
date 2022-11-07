@@ -15,12 +15,12 @@ const Main: FC = () => {
       <Header
         isDarkTheme={chosenTheme.dark === "false" ? true : false}
         toggle={toggle}
-        isAuthorized={false}
+        isAuthorized={true}
       />
       <main className="main-wrapper__content">
         <CardGrid
           isDarkTheme={chosenTheme.dark === "false" ? true : false}
-          isAuthorized
+          isAuthorized={true}
         />
       </main>
       <div className="main-wrapper__footer">

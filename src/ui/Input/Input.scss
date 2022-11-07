@@ -1,3 +1,9 @@
+@mixin for-mobile-up {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
 .input-wrapper {
   &__input {
     width: 340px;
@@ -16,6 +22,10 @@
     line-height: 22px;
     color: var(--primary-dark-gray);
     cursor: pointer;
+
+    @include for-mobile-up {
+      width: 260px;
+    }
 
     &::placeholder {
       font-family: "Inter";
@@ -98,5 +108,13 @@
     font-size: 12px;
     line-height: 17px;
     color: var(--accent-error);
+  }
+
+  &__inputAddEditPainting {
+    width: 105px;
+
+    @include for-mobile-up {
+      width: 260px;
+    }
   }
 }

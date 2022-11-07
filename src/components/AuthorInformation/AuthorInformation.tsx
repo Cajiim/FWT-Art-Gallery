@@ -1,5 +1,6 @@
 import { FC, useState } from "react";
 import { Accordion } from "../../ui/Accordion";
+import { AddEditAuthor } from "../Modals/AddEditAuthor";
 import { Button } from "../../ui/Button";
 import { Delete } from "../Modals/DeleteAuthor";
 import { ReactComponent as Arrow } from "../../assets/img/authorArrow.svg";
@@ -17,7 +18,8 @@ type TAuthorInformation = {
 
 const AuthorInformation: FC<TAuthorInformation> = ({ ...args }) => {
   const { isDarkTheme, isAuthorized } = args;
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpenDelete, setIsOpenDelete] = useState<boolean>(false);
+  const [isOpenEditAuthor, setIsOpenEditAuthor] = useState<boolean>(false);
   const data = {
     yearsOfLife: "29 july 1800 - 2 may 1900",
     country: "Feodosia, Russian Empire",
@@ -27,7 +29,6 @@ const AuthorInformation: FC<TAuthorInformation> = ({ ...args }) => {
     genres: ["Romanticism", "Realistic", "Art", "Nature", "Bataille"],
     id: "1",
   };
-  console.log(isOpen, "isOpen");
   return (
     <div
       className={cn("author", {
@@ -52,19 +53,22 @@ const AuthorInformation: FC<TAuthorInformation> = ({ ...args }) => {
             author__buttons_guest: isAuthorized,
           })}
         >
-          <Button className="button__pictoral" isDarkTheme={isDarkTheme}>
+          <Button
+            className="button__pictoral"
+            isDarkTheme={isDarkTheme}
+            onClick={() => setIsOpenEditAuthor(true)}
+          >
             <Edit />
           </Button>
           <Button
             className="button__pictoral"
             isDarkTheme={isDarkTheme}
-            onClick={() => setIsOpen(true)}
+            onClick={() => setIsOpenDelete(true)}
           >
             <DeleteIcon />
           </Button>
         </div>
       </div>
-
       <img
         src="https://www.figma.com/file/UHg2LdpfSoM8XBrzrqocs6/image/f9083c0b624bb08c9a12c4c2ce6c5bd2d14667a6?fuid=1151076368311196868"
         alt="authorImg"
@@ -76,8 +80,13 @@ const AuthorInformation: FC<TAuthorInformation> = ({ ...args }) => {
       <Delete
         isDarkTheme={isDarkTheme}
         title={"artist profile?"}
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
+        isOpen={isOpenDelete}
+        setIsOpen={setIsOpenDelete}
+      />
+      <AddEditAuthor
+        isOpen={isOpenEditAuthor}
+        setIsOpen={setIsOpenEditAuthor}
+        isDarkTheme={isDarkTheme}
       />
     </div>
   );

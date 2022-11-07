@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactNode } from "react";
+import { HTMLAttributes, ReactNode, Dispatch } from "react";
 
 export type TButton = HTMLAttributes<HTMLButtonElement> & {
   isDisabled?: boolean;
@@ -17,11 +17,10 @@ export type TCardGrid = {
   isDarkTheme?: boolean;
 };
 
-export type TCheckbox = {
-  className?: string;
-  id?: string;
-  other?: HTMLInputElement;
+export type TCheckbox = HTMLAttributes<HTMLDivElement> & {
   isDarkTheme?: boolean;
+  arrGenres: ReactNode[];
+  setArrGenres: Dispatch<React.SetStateAction<ReactNode[]>>;
 };
 
 export type TInput = {
@@ -35,11 +34,12 @@ export type TInput = {
 };
 
 export type TLabel = {
-  children?: string;
+  children?: ReactNode;
   className?: string;
   other?: HTMLAnchorElement;
   isDarkTheme?: boolean;
   isVisible?: boolean;
+  onClick?: () => void;
 };
 
 export type TLink = {

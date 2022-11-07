@@ -1,8 +1,10 @@
 .checkbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   position: relative;
-  width: 24px;
-  height: 24px;
   cursor: pointer;
+  padding: 9px 0 9px 16px !important;
 
   &__input {
     position: absolute;
@@ -42,5 +44,22 @@
   &__input:checked + &__fake::before {
     opacity: 1;
     background-size: 100%;
+  }
+
+  &__text {
+    /* Paragraph base/light 16 */
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 140%;
+    /* or 22px */
+    /* primary/dark gray */
+    color: #575757;
+
+    &_dark {
+      /* primary/light gray */
+      color: #dedede;
+    }
   }
 }

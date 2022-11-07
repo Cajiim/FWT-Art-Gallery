@@ -1,18 +1,29 @@
+@mixin for-small-tablet {
+  @media screen and (max-width: 1280px) {
+    @content;
+  }
+}
+@mixin for-mobile-up {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
 .closeIcon {
   display: none;
 
-  &_dark {
-    fill: var(--primary-light-gray);
-  }
-
   &_visible {
-    display: block;
-    position: relative;
+    display: flex;
+    position: static;
     width: 8px;
     height: 8px;
     fill: var(--primary-dark-gray);
-    padding: 0 0 4px 0 !important;
+    /*    padding: 0 0 4px 0 !important; */
     cursor: pointer;
+  }
+
+  &_dark {
+    fill: var(--primary-light-gray);
   }
 
   &__slide {
@@ -42,6 +53,34 @@
     &_dark {
       /* secondary/gray */
       fill: #9c9c9c;
+    }
+  }
+
+  &__editAuthor {
+    display: flex;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+    /* primary/dark gray */
+    fill: #575757;
+    top: 36px;
+    right: 36px;
+
+    &_dark {
+      /* secondary/gray */
+      fill: #9c9c9c;
+    }
+
+    @include for-small-tablet {
+      top: 36px;
+      right: 24px;
+    }
+
+    @include for-mobile-up {
+      top: 24px;
+      right: 24px;
     }
   }
 }

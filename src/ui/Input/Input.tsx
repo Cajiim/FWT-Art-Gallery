@@ -20,6 +20,7 @@ const Input: FC<TInput> = ({ className, children, ...other }) => {
           "input-wrapper__input_dark": other.isDarkTheme,
           "input-wrapper__input_error": other.isError,
           "input-wrapper__input_dark_error": other.isDarkTheme && other.isError,
+          [`${className}_dark`]: other.isDarkTheme && className,
         })}
         placeholder={other.placeholder}
       />

@@ -8,15 +8,24 @@ type TCloseIcon = {
   isDarkTheme?: boolean;
   className?: string;
   isVisible?: boolean;
+  onClick?: () => void;
 };
 
-const CloseIcon: FC<TCloseIcon> = ({ isDarkTheme, className, isVisible }) => {
+const CloseIcon: FC<TCloseIcon> = ({
+  isDarkTheme,
+  className,
+  isVisible,
+  onClick,
+}) => {
   return (
     <div
       className={cn("closeIcon", className, {
         closeIcon_dark: isDarkTheme,
         closeIcon_visible: isVisible,
+        [`${className}_dark`]: isDarkTheme,
       })}
+      onClick={onClick}
+      aria-hidden
     >
       <Close />
     </div>

@@ -5,7 +5,7 @@ import classNames from "classnames";
 import styles from "./Label.scss";
 const cn = classNames.bind(styles);
 
-const Label: FC<TLabel> = ({ children, className, ...other }) => {
+const Label: FC<TLabel> = ({ children, className, onClick, ...other }) => {
   return (
     <label
       className={cn("label", className, {
@@ -19,7 +19,11 @@ const Label: FC<TLabel> = ({ children, className, ...other }) => {
       >
         {children}
       </p>
-      <CloseIcon isDarkTheme={other.isDarkTheme} isVisible={other.isVisible} />
+      <CloseIcon
+        isDarkTheme={other.isDarkTheme}
+        isVisible={other.isVisible}
+        onClick={onClick}
+      />
     </label>
   );
 };

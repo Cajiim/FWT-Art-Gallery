@@ -17,10 +17,17 @@
 .authorContent {
   &__artworksWrapper {
     max-width: 1240px;
-    margin: 0 auto !important;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0 auto 60px auto !important;
 
     @include for-small-tablet {
       margin: 0 20px 0 20px !important;
+    }
+
+    &_auth{
+      margin: 0 auto 20px auto !important;
     }
   }
 
@@ -56,6 +63,42 @@
       /* identical to box height */
       /* accent/gold */
       color: #ab8956;
+    }
+  }
+
+  &__addPicture {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    max-width: 118px;
+    max-height: 24px;
+    align-self: flex-end;
+    cursor: pointer;
+  }
+
+  &__plusIcon {
+    display: flex;
+    /* primary/dark gray */
+    fill: #575757;
+    &_dark {
+      /* primary/light gray */
+      fill: #dedede;
+    }
+  }
+
+  &__addPicture:hover &__plusIcon {
+    /* primary/black */
+    fill: #121212;
+    &_dark {
+      /* primary/white */
+      fill: #ffffff;
+    }
+  }
+
+  &__addPicture:hover .button {
+    color: var(--primary-black);
+    &_dark {
+      color: var(--primary-white);
     }
   }
 }

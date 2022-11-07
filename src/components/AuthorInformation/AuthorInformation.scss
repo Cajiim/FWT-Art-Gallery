@@ -32,12 +32,14 @@
     margin: 56px 0 28px 0 !important;
 
     @include for-tablet-up {
-      margin: 56px auto 28px auto !important;
+      margin: 56px auto 24px auto !important;
       max-width: 1240px;
     }
     @include for-small-tablet {
-      margin: 56px 20px 28px 20px !important;
-      max-width: 1240px;
+      margin: 32px 20px 20px 20px !important;
+    }
+    @include for-small-tablet {
+      margin: 12px 20px 12px 20px !important;
     }
   }
 

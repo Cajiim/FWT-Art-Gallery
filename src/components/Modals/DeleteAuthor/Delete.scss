@@ -35,6 +35,10 @@
       /* secondary/gray */
       fill: #9c9c9c;
     }
+
+    @include for-mobile-up {
+      display: none;
+    }
   }
 
   &__iconContainer {
@@ -43,6 +47,10 @@
     &_dark {
       /* secondary/gray */
       fill: #9c9c9c;
+    }
+
+    @include for-mobile-up {
+      display: none;
     }
   }
 
@@ -63,6 +71,10 @@
       /* primary/light gray */
       color: #dedede;
     }
+
+    @include for-mobile-up {
+      margin: 20px 33px 0 33px !important;
+    }
   }
 
   &__confirmation {
@@ -79,6 +91,10 @@
     /* secondary/gray */
     color: #9c9c9c;
     margin: 12px 40px 32px 40px !important;
+
+    @include for-mobile-up {
+      margin: 12px 25px 20px 25px !important;
+    }
   }
 
   &__container {

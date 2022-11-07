@@ -7,13 +7,20 @@ import { ThemeIcon } from "../../ui/ThemeIcon";
 import { Menu } from "../Modals/Menu";
 import { AuthModal } from "../Modals/AuthModal";
 import styles from "./Header.scss";
+
 const cn = classNames.bind(styles);
 
 type THeader = TTheme & {
   isAuthorized: boolean;
+  isAuthorPage?: boolean;
 };
 
-const Header: FC<THeader> = ({ isDarkTheme, toggle, isAuthorized }) => {
+const Header: FC<THeader> = ({
+  isDarkTheme,
+  toggle,
+  isAuthorized,
+  isAuthorPage,
+}) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isAuthOpen, setIsAuthOpen] = useState<boolean>(false);
   const [isLogIn, setIsLogIn] = useState<boolean>(true);
@@ -23,7 +30,7 @@ const Header: FC<THeader> = ({ isDarkTheme, toggle, isAuthorized }) => {
   return (
     <header
       className={cn("header", {
-        header_guest: !isAuthorized,
+        header_guest: !isAuthorized && !isAuthorPage,
       })}
     >
       <Logo isDarkTheme={isDarkTheme} />

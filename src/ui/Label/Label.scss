@@ -24,4 +24,8 @@
   &__text_dark {
     color: var(--primary-light-gray);
   }
+
+  &__multiselect {
+    margin: 0 !important; 
+  }
 }

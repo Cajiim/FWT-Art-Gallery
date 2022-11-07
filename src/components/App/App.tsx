@@ -27,7 +27,6 @@ const App: FC = () => {
         : document.body.classList.remove("darkTheme");
     dispatch(changeTheme(coockies));
     setTheme(chosenTheme.dark === "false" ? "dark" : "light");
-    console.log("1");
     return () => isDarkTheme;
   }, [chosenTheme.dark, coockies, dispatch, theme]);
 
