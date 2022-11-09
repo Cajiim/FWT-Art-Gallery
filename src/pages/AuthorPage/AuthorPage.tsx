@@ -15,13 +15,13 @@ const AuthorPage: FC = () => {
       <Header
         isDarkTheme={chosenTheme.dark === "false" ? true : false}
         toggle={toggle}
-        isAuthorized={false}
+        isAuthorized={true}
         isAuthorPage
       />
       <main className="main-wrapper__content">
         <AuthorContent
           isDarkTheme={chosenTheme.dark === "false" ? true : false}
-          isAuthorized={false}
+          isAuthorized={true}
         />
       </main>
       <div className="main-wrapper__footer">

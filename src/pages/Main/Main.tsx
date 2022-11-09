@@ -4,6 +4,7 @@ import { useAppSelector } from "../../hooks/useReduxHooks";
 import { CardGrid } from "../../ui/CardGrid";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
+import { AddArtistButton } from "../../components/AddArtistButton";
 import { ThemeContext } from "../../context";
 import "./Main.scss";
 
@@ -15,13 +16,14 @@ const Main: FC = () => {
       <Header
         isDarkTheme={chosenTheme.dark === "false" ? true : false}
         toggle={toggle}
-        isAuthorized={true}
+        isAuthorized={false}
       />
       <main className="main-wrapper__content">
-        <CardGrid
+        <AddArtistButton
+          isAuthorized={false}
           isDarkTheme={chosenTheme.dark === "false" ? true : false}
-          isAuthorized={true}
         />
+        <CardGrid isDarkTheme={chosenTheme.dark === "false" ? true : false} />
       </main>
       <div className="main-wrapper__footer">
         <Footer isDarkTheme={chosenTheme.dark === "false" ? true : false} />

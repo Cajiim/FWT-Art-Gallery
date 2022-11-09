@@ -22,7 +22,7 @@ const CloseIcon: FC<TCloseIcon> = ({
       className={cn("closeIcon", className, {
         closeIcon_dark: isDarkTheme,
         closeIcon_visible: isVisible,
-        [`${className}_dark`]: isDarkTheme,
+        [`${className}_dark`]: isDarkTheme && className,
       })}
       onClick={onClick}
       aria-hidden

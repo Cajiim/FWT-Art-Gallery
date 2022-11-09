@@ -17,7 +17,11 @@ type TAddEditAuthor = {
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 };
 
-const EditAuthor: FC<TAddEditAuthor> = ({ isDarkTheme, isOpen, setIsOpen }) => {
+const AddEditAuthor: FC<TAddEditAuthor> = ({
+  isDarkTheme,
+  isOpen,
+  setIsOpen,
+}) => {
   return createPortal(
     <div
       className={cn("editAuthor", {
@@ -79,4 +83,4 @@ const EditAuthor: FC<TAddEditAuthor> = ({ isDarkTheme, isOpen, setIsOpen }) => {
   );
 };
 
-export default EditAuthor;
+export default AddEditAuthor;

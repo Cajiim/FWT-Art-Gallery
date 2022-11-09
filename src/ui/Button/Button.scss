@@ -95,7 +95,7 @@
     }
   }
 
-  &__auth {
+  &__inline {
     /* Paragraph base/light 16 */
     font-family: "Inter";
     font-style: normal;
@@ -133,6 +133,11 @@
         /* primary/white */
         color: #ffffff;
       }
+    }
+
+    @include for-mobile-up {
+      font-size: 12px;
+      line-height: 17px;
     }
   }
 

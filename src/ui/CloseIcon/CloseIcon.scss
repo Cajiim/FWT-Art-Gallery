@@ -3,6 +3,11 @@
     @content;
   }
 }
+@mixin for-min-tablet {
+  @media screen and (max-width: 1027px) {
+    @content;
+  }
+}
 @mixin for-mobile-up {
   @media screen and (max-width: 767px) {
     @content;
@@ -44,15 +49,35 @@
   &__auth {
     width: 16px;
     height: 16px;
-    position: relative;
-    z-index: 1;
-    cursor: pointer;
     /* primary/dark gray */
     fill: #575757;
+    cursor: pointer;
+    position: absolute;
+    right: 36px;
+    top: 36px;
 
     &_dark {
       /* secondary/gray */
       fill: #9c9c9c;
+    }
+
+    &::before {
+      content: "";
+      width: 25px;
+      height: 25px;
+      position: absolute;
+      left: -4px;
+      top: -4px;
+    }
+
+    @include for-min-tablet {
+      top: 36px;
+      right: 24px;
+    }
+
+    @include for-mobile-up {
+      top: 24px;
+      right: 24px;
     }
   }
 
@@ -76,6 +101,29 @@
     @include for-small-tablet {
       top: 36px;
       right: 24px;
+    }
+
+    @include for-mobile-up {
+      top: 24px;
+      right: 24px;
+    }
+  }
+
+  &__editPainting {
+    display: flex;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+    /* primary/dark gray */
+    fill: #575757;
+    top: 36px;
+    right: 36px;
+
+    &_dark {
+      /* secondary/gray */
+      fill: #9c9c9c;
     }
 
     @include for-mobile-up {

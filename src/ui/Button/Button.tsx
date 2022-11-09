@@ -16,6 +16,7 @@ const Button: FC<TButton> = ({ children, onClick, ...other }) => {
       })}
       disabled={other.isDisabled}
       onClick={onClick}
+      type="button"
     >
       {children}
     </button>

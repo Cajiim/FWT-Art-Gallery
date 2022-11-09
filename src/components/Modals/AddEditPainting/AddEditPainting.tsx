@@ -1,5 +1,7 @@
-import { FC } from "react";
+import { FC, Dispatch, SetStateAction } from "react";
 import classNames from "classnames";
+import { createPortal } from "react-dom";
+import DropIcon from "../../../assets/img/dropPainting.svg";
 import { CloseIcon } from "../../../ui/CloseIcon";
 import { Input } from "../../../ui/Input";
 import { Button } from "../../../ui/Button";
@@ -8,27 +10,37 @@ import styles from "./AddEditPainting.scss";
 const cn = classNames.bind(styles);
 
 type TAddEditPainting = {
-  isDarkTheme: boolean;
-  isOpen: boolean;
+  isDarkTheme?: boolean;
+  isOpen?: boolean;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
 };
 
-const AddEditPainting: FC<TAddEditPainting> = ({ isDarkTheme, isOpen }) => {
-  return (
+const AddEditPainting: FC<TAddEditPainting> = ({
+  isDarkTheme,
+  isOpen,
+  setIsOpen,
+}) => {
+  return createPortal(
     <div
       className={cn("editPainting", {
         editPainting_dark: isDarkTheme,
         editPainting_open: isOpen,
       })}
+      onClick={() => setIsOpen(false)}
+      aria-hidden
     >
       <div
         className={cn("editPainting__content", {
           editPainting__content_dark: isDarkTheme,
         })}
+        onClick={(e) => e.stopPropagation()}
+        aria-hidden
       >
         <CloseIcon
           isVisible
-          className="closeIcon__addEditPainting"
+          className="closeIcon__editPainting"
           isDarkTheme={isDarkTheme}
+          onClick={() => setIsOpen(false)}
         />
         <div className="editPainting__inputs">
           <Input isDarkTheme={isDarkTheme}>The name of the picture</Input>
@@ -40,7 +52,7 @@ const AddEditPainting: FC<TAddEditPainting> = ({ isDarkTheme, isOpen }) => {
           </Input>
         </div>
         <div
-          className={cn("editPainting__content", {
+          className={cn("editPainting__dropContent", {
             editPainting__dragAndDrop_dark: isDarkTheme,
           })}
         >
@@ -49,14 +61,21 @@ const AddEditPainting: FC<TAddEditPainting> = ({ isDarkTheme, isOpen }) => {
             className={cn("editPainting__img", {
               editPainting__img_dark: isDarkTheme,
             })}
+            src={DropIcon}
           />
           <p
             className={cn("editPainting__text", {
               editPainting__text_dark: isDarkTheme,
             })}
           >
-            Drop your image here, or
-            <Button isDarkTheme={isDarkTheme}>browse</Button>
+            Drop your image here, or <br />
+            <Button
+              isDarkTheme={isDarkTheme}
+              isOutlined
+              className="button__inline"
+            >
+              {"browse"}
+            </Button>
           </p>
           <p
             className={cn("editPainting__dropRules", {
@@ -67,7 +86,8 @@ const AddEditPainting: FC<TAddEditPainting> = ({ isDarkTheme, isOpen }) => {
           </p>
         </div>
       </div>
-    </div>
+    </div>,
+    document.getElementById("modal") as HTMLElement
   );
 };
 

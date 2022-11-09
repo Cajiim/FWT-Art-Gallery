@@ -1,0 +1,90 @@
+.editPainting {
+  display: none;
+
+  &_open {
+    height: 100vh;
+    width: 100vw;
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(3, 3, 3, 0.3);
+    z-index: 10;
+  }
+
+  &_dark {
+    background: rgba(3, 3, 3, 0.6);
+  }
+
+  &__content {
+    width: 693px;
+    height: 723px;
+    /* secondary/white */
+    background: #fcfcfc;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    position: absolute;
+    display: flex;
+
+    &_dark {
+      /* primary/black */
+      background: #121212;
+    }
+  }
+
+  &__inputs {
+  }
+
+  &__dropContent {
+    /* primary/dark gray */
+    border: 1px dashed #575757;
+    border-radius: 2px;
+    width: 493px;
+    height: 327px;
+    &_dark {
+    }
+  }
+
+  &__img {
+    opacity: 0.2;
+
+    &_dark {
+      opacity: 0.1;
+    }
+  }
+
+  &__text {
+    /* Paragraph base/light 16 */
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    /* primary/dark gray */
+    color: #575757;
+    &_dark {
+      /* primary/light gray */
+      color: #dedede;
+    }
+  }
+
+  &__dropRules {
+    /* Paragraph small/light 12 */
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 140%;
+    /* secondary/gray */
+    color: #9c9c9c;
+
+    &_dark {
+      /* primary/dark gray */
+      color: #575757;
+    }
+  }
+}

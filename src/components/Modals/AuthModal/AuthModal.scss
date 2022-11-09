@@ -1,3 +1,19 @@
+@mixin for-tablet-up {
+  @media screen and (max-width: 1439px) {
+    @content;
+  }
+}
+@mixin for-min-tablet {
+  @media screen and (max-width: 1027px) {
+    @content;
+  }
+}
+@mixin for-mobile-up {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
 .auth {
   display: none;
 
@@ -29,6 +45,11 @@
     transform: translate(-50%, -50%);
     z-index: 2;
 
+    @include for-tablet-up {
+      width: 100%;
+      height: 100%;
+    }
+
     &_dark {
       /* primary/black */
       background: #121212;
@@ -36,11 +57,21 @@
   }
 
   &__img {
-    width: 658px;
-    height: 700px;
-    object-fit: cover;
-    left: -100px;
+    min-width: 498px;
+    min-height: 700px;
+    overflow: hidden;
+    display: block;
     position: relative;
+    object-fit: cover;
+
+    @include for-tablet-up {
+      height: 100%;
+      min-width: 48.4435798%;
+    }
+
+    @include for-min-tablet {
+      display: none;
+    }
   }
 
   &__content {
@@ -49,30 +80,9 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-  }
 
-  &__closeIcon {
-    width: 16px;
-    height: 16px;
-    /* primary/dark gray */
-    fill: #575757;
-    cursor: pointer;
-    position: absolute;
-    right: 36px;
-    top: 36px;
-
-    &_dark {
-      /* secondary/gray */
-      fill: #9c9c9c;
-    }
-
-    &::before {
-      content: "";
-      width: 25px;
-      height: 25px;
-      position: absolute;
-      left: -4px;
-      top: -4px;
+    @include for-tablet-up {
+      min-width: 51.5564202%;
     }
   }
 
@@ -93,11 +103,27 @@
       /* primary/white */
       color: #ffffff;
     }
+
+    @include for-min-tablet {
+      font-size: 60px;
+      line-height: 73px;
+      margin: 272px 0 40px 0 !important;
+    }
+    @include for-mobile-up {
+      font-size: 32px;
+      line-height: 100%;
+      margin: 130px 20px 0 20px !important;
+    }
   }
 
   &__info {
     display: flex;
     align-items: center;
+
+    @include for-mobile-up {
+      position: absolute;
+      bottom: 32px;
+    }
   }
 
   &__explanation {
@@ -118,13 +144,11 @@
       /* primary/white */
       color: #ffffff;
     }
-  }
 
-  &__imgWrapper {
-    min-width: 498px;
-    min-height: 700px;
-    overflow: hidden;
-    display: block;
+    @include for-mobile-up {
+      font-size: 12px;
+      line-height: 140%;
+    }
   }
 
   &__input {
@@ -132,5 +156,9 @@
     flex-direction: column;
     gap: 40px;
     margin: 60px 0 60px 0 !important;
+
+    @include for-mobile-up {
+      margin: 40px 0 40px 0 !important;
+    }
   }
 }

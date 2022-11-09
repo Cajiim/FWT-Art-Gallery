@@ -1,0 +1,69 @@
+@mixin for-small-tablet {
+  @media screen and (max-width: 1280px) {
+    @content;
+  }
+}
+@mixin for-mobile-up {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+.addArtistWrapper {
+  max-width: 1240px;
+  margin: 60px auto 25px auto !important;
+
+  @include for-small-tablet {
+    margin: 60px 20px 25px 20px !important;
+  }
+
+  @include for-mobile-up {
+    margin: 40px 20px 25px 20px !important;
+  }
+
+  &__plus {
+    display: flex;
+    align-items: center;
+    /* primary/dark gray */
+    fill: #575757;
+
+    &:hover {
+      /* primary/black */
+      fill: #121212;
+    }
+
+    &_dark {
+      /* primary/light gray */
+      fill: #dedede;
+
+      &:hover {
+        /* primary/white */
+        fill: #ffffff;
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    gap: 16px;
+    cursor: pointer;
+    width: 110px;
+    height: 15px;
+  }
+
+  &__button:hover &__plus {
+    /* primary/black */
+    fill: #121212;
+    &_dark {
+      /* primary/white */
+      fill: #ffffff;
+    }
+  }
+
+  &__button:hover .button {
+    color: var(--primary-black);
+    &_dark {
+      color: var(--primary-white);
+    }
+  }
+}

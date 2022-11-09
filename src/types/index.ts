@@ -23,14 +23,13 @@ export type TCheckbox = HTMLAttributes<HTMLDivElement> & {
   setArrGenres: Dispatch<React.SetStateAction<ReactNode[]>>;
 };
 
-export type TInput = {
-  className?: string;
-  other?: HTMLInputElement;
+export type TInput = HTMLAttributes<HTMLInputElement> & {
   isDarkTheme?: boolean;
   isError?: boolean;
-  placeholder?: string;
   errorMessage?: string;
-  children: ReactNode;
+  type?: string;
+  name?: string;
+  value?: string;
 };
 
 export type TLabel = {
