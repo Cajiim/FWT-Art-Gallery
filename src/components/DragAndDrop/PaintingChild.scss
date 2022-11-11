@@ -1,0 +1,88 @@
+.paintingChild {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  width: inherit;
+  height: inherit;
+
+  &_drag {
+    pointer-events: none;
+  }
+
+  &__img {
+    margin: 0 0 20px 0 !important;
+    opacity: 0.2;
+
+    &_dark {
+      opacity: 0.1;
+    }
+
+    &_uploaded {
+      margin: 0 !important;
+      opacity: 1;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 10;
+      border-radius: 2px;
+    }
+  }
+
+  &__text {
+    /* Paragraph base/light 16 */
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    /* primary/dark gray */
+    color: #575757;
+    display: flex;
+    flex-wrap: wrap;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+
+    &_dark {
+      /* primary/light gray */
+      color: #dedede;
+    }
+  }
+
+  &__dropRules {
+    /* Paragraph small/light 12 */
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 140%;
+    /* secondary/gray */
+    color: #9c9c9c;
+    margin: 12px 0 0 0 !important;
+
+    &_dark {
+      /* primary/dark gray */
+      color: #575757;
+    }
+  }
+
+  &__input {
+    opacity: 0;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    line-height: 0;
+  }
+
+  &__deleteWrapper {
+    position: absolute;
+    z-index: 12;
+    right: 18px;
+    bottom: 18px;
+  }
+}

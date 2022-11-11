@@ -113,8 +113,15 @@
     position: absolute;
   }
 
+  &__errorIcon{
+    display: flex;
+    width: 16px;
+    height: 16px;
+  }
+
   &__inputAddEditPainting {
     width: 105px;
+    padding: 0 16px 0 16px !important;
 
     @include for-mobile-up {
       width: 260px;

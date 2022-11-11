@@ -186,4 +186,36 @@
       align-self: center;
     }
   }
+
+  &__dragDeleteImg {
+    width: 28px;
+    height: 28px;
+    /* primary/white */
+    background: rgb(#ffffff, 0.1);
+    border-radius: 4px;
+    /* primary/light gray */
+    fill: #dedede;
+
+    &:hover {
+      background: rgb(#ffffff, 0.1);
+      box-shadow: none;
+      fill: #ffffff;
+    }
+    &:focus {
+      background: rgb(#ffffff, 0.1);
+      fill: #ffffff;
+    }
+
+    &_dark {
+      /* secondary/black */
+      background: rgb(#1a1818, 0.1);
+
+      &:hover {
+        background: rgb(#1a1818, 0.1);
+      }
+      &:focus {
+        background: rgb(#1a1818, 0.1);
+      }
+    }
+  }
 }

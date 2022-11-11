@@ -55,7 +55,9 @@ const Input: FC<TInput> = ({
       </div>
       {args.isError ? (
         <div className="input-wrapper__error">
-          <ErrorIcon />
+          <div className="input-wrapper__errorIcon">
+            <ErrorIcon />
+          </div>
           <p>{errorMessage}</p>
         </div>
       ) : null}

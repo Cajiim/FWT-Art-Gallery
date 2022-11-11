@@ -1,7 +1,12 @@
-import { FC, Dispatch, SetStateAction } from "react";
+import { FC, Dispatch, SetStateAction, useState } from "react";
 import classNames from "classnames";
 import { createPortal } from "react-dom";
-import DropIcon from "../../../assets/img/dropPainting.svg";
+import {
+  handlChangeName,
+  handlChangeYear,
+  handlClickBlur,
+} from "../../../utils/getPaintingValidation";
+import { DragAndDrop } from "../../DragAndDrop";
 import { CloseIcon } from "../../../ui/CloseIcon";
 import { Input } from "../../../ui/Input";
 import { Button } from "../../../ui/Button";
@@ -20,6 +25,13 @@ const AddEditPainting: FC<TAddEditPainting> = ({
   isOpen,
   setIsOpen,
 }) => {
+  const [name, setName] = useState("");
+  const [year, setYear] = useState("");
+  const [nameDirty, setNameDirty] = useState(false);
+  const [yearDirty, setYearDirty] = useState(false);
+  const [nameError, setNameError] = useState("Name cannot be empty");
+  const [yearError, setYearError] = useState("Cannot be empty");
+
   return createPortal(
     <div
       className={cn("editPainting", {
@@ -29,7 +41,7 @@ const AddEditPainting: FC<TAddEditPainting> = ({
       onClick={() => setIsOpen(false)}
       aria-hidden
     >
-      <div
+      <form
         className={cn("editPainting__content", {
           editPainting__content_dark: isDarkTheme,
         })}
@@ -37,55 +49,39 @@ const AddEditPainting: FC<TAddEditPainting> = ({
         aria-hidden
       >
         <CloseIcon
-          isVisible
           className="closeIcon__editPainting"
           isDarkTheme={isDarkTheme}
           onClick={() => setIsOpen(false)}
         />
         <div className="editPainting__inputs">
-          <Input isDarkTheme={isDarkTheme}>The name of the picture</Input>
+          <Input
+            isDarkTheme={isDarkTheme}
+            name="name"
+            value={name}
+            onChange={(e) => handlChangeName(e, setName, setNameError)}
+            onBlur={(e) => handlClickBlur(e, setNameDirty, setYearDirty)}
+            isError={nameDirty && nameError !== ""}
+            errorMessage={nameError}
+          >
+            The name of the picture
+          </Input>
           <Input
             isDarkTheme={isDarkTheme}
             className="input-wrapper__inputAddEditPainting"
+            name="year"
+            value={year}
+            onChange={(e) => handlChangeYear(e, setYear, setYearError)}
+            onBlur={(e) => handlClickBlur(e, setNameDirty, setYearDirty)}
+            isError={yearDirty && yearError !== ""}
+            errorMessage={yearError}
+            type="number"
           >
             Year of creation
           </Input>
         </div>
-        <div
-          className={cn("editPainting__dropContent", {
-            editPainting__dragAndDrop_dark: isDarkTheme,
-          })}
-        >
-          <img
-            alt="dropImg"
-            className={cn("editPainting__img", {
-              editPainting__img_dark: isDarkTheme,
-            })}
-            src={DropIcon}
-          />
-          <p
-            className={cn("editPainting__text", {
-              editPainting__text_dark: isDarkTheme,
-            })}
-          >
-            Drop your image here, or <br />
-            <Button
-              isDarkTheme={isDarkTheme}
-              isOutlined
-              className="button__inline"
-            >
-              {"browse"}
-            </Button>
-          </p>
-          <p
-            className={cn("editPainting__dropRules", {
-              editPainting__dropRules_dark: isDarkTheme,
-            })}
-          >
-            Upload only .jpg or .png format less than 3 MB
-          </p>
-        </div>
-      </div>
+        <DragAndDrop isDarkTheme={isDarkTheme} />
+        <Button isDarkTheme={isDarkTheme}>Save</Button>
+      </form>
     </div>,
     document.getElementById("modal") as HTMLElement
   );
