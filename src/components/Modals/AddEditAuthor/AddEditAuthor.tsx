@@ -1,12 +1,14 @@
-import { FC, Dispatch, SetStateAction } from "react";
-import { createPortal } from "react-dom";
+import { FC, Dispatch, SetStateAction, useRef, useState } from "react";
 import classNames from "classnames";
+import { createPortal } from "react-dom";
+import {
+  handlChange,
+  dragStartHandler,
+  dragLeaveHandler,
+  onDropHandler,
+} from "../../../utils/getDrag";
 import DropIcon from "../../../assets/img/dropIcon.svg";
-import { Input } from "../../../ui/Input";
-import { Textarea } from "../../../ui/Textarea";
-import { Multiselect } from "../../../ui/Multiselect";
-import { Button } from "../../../ui/Button";
-import { CloseIcon } from "../../../ui/CloseIcon";
+import AuthorChild from "./AuthorChild";
 import styles from "./AddEditAuthor.scss";
 
 const cn = classNames.bind(styles);
@@ -22,62 +24,71 @@ const AddEditAuthor: FC<TAddEditAuthor> = ({
   isOpen,
   setIsOpen,
 }) => {
+  const ref = useRef<HTMLInputElement | null>(null);
+  const [isDrag, setIsDrag] = useState(false);
+  const [fileData, setFileData] = useState<string | ArrayBuffer>("");
+  const [sizeFile, setSizeFile] = useState<number>(0);
+  const handlPick = () => {
+    ref.current?.click();
+  };
   return createPortal(
     <div
       className={cn("editAuthor", {
         editAuthor_dark: isDarkTheme,
         editAuthor_open: isOpen,
+        editAuthor_drag: isDrag,
       })}
       onClick={() => setIsOpen(false)}
       aria-hidden
+      ///Не тут должно быть
+      onDragStart={(e) => dragStartHandler(e, setIsDrag)}
+      onDragLeave={(e) => dragLeaveHandler(e, setIsDrag)}
+      onDragOver={(e) => dragStartHandler(e, setIsDrag)}
+      onDrop={(e) => onDropHandler(e, setFileData, setSizeFile, setIsDrag)}
     >
-      <form
-        className={cn("editAuthor__content", {
-          editAuthor__content_dark: isDarkTheme,
-        })}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <CloseIcon
+      {!isDrag ? (
+        <AuthorChild
           isDarkTheme={isDarkTheme}
-          onClick={() => setIsOpen(false)}
-          className="closeIcon__editAuthor"
+          isDrag={isDrag}
+          fileData={fileData}
+          setFileData={setFileData}
+          handlPick={handlPick}
+          handlChange={(e) => handlChange(e, setFileData, setSizeFile)}
+          sizeFile={sizeFile}
+          setIsOpen={setIsOpen}
+          ref={ref}
         />
-        <div className="editAuthor__editImageWrapper">
-          <div
-            className={cn("editAuthor__dropDown", {
-              editAuthor__dropDown_dark: isDarkTheme,
+      ) : (
+        <div
+          className={cn("editAuthor__dropWindow", {
+            editAuthor__dropWindow_dark: isDarkTheme,
+          })}
+          onClick={(e) => e.stopPropagation()}
+          aria-hidden
+        >
+          <img
+            className={cn("editAuthor__image", {
+              editAuthor__image_dark: isDarkTheme,
+            })}
+            alt="dropIcon"
+            src={DropIcon}
+          />
+          <p
+            className={cn("editAuthor__text", {
+              editAuthor__text_dark: isDarkTheme,
             })}
           >
-            <img
-              alt="dropIconImg"
-              src={DropIcon}
-              className={cn("editAuthor__editImage", {
-                editAuthor__editImage_dark: isDarkTheme,
-              })}
-            />
-            <span
-              className={cn("editAuthor__dropDownText", {
-                editAuthor__dropDownText_dark: isDarkTheme,
-              })}
-            >
-              {"You can drop your image here"}
-            </span>
-          </div>
-          <Button isDarkTheme={isDarkTheme} isOutlined onClick={() => {}}>
-            Browse profile photo
-          </Button>
+            Drop your image here
+          </p>
+          <p
+            className={cn("editAuthor__rules", {
+              editAuthor__rules_dark: isDarkTheme,
+            })}
+          >
+            Upload only .jpg or .png format less than 3 MB
+          </p>
         </div>
-        <div className="editAuthor__inputFields">
-          <Input isDarkTheme={isDarkTheme}>Name*</Input>
-          <Input isDarkTheme={isDarkTheme}>Years of life</Input>
-          <Input isDarkTheme={isDarkTheme}>Location</Input>
-          <Textarea description="Description" isDarkTheme={isDarkTheme} />
-          <Multiselect isDarkTheme={isDarkTheme} />
-          <Button isDarkTheme={isDarkTheme} className="button__editAuthor">
-            {"save"}
-          </Button>
-        </div>
-      </form>
+      )}
     </div>,
     document.getElementById("modal") as HTMLElement
   );

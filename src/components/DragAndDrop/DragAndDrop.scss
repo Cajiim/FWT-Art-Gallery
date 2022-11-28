@@ -1,3 +1,9 @@
+@mixin for-mobile-up {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
 .dragAndDrop {
   width: 493px;
   height: 327px;
@@ -19,5 +25,16 @@
 
   &_uploaded {
     border: none;
+  }
+
+  &_isAuthor {
+    width: 200px;
+    height: 200px;
+    border: none;
+  }
+
+  @include for-mobile-up {
+    width: 280px;
+    height: 187px;
   }
 }

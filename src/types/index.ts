@@ -80,3 +80,8 @@ export type TAuthors = {
 
   isDarkTheme?: boolean;
 };
+
+export type Size = {
+  width: number;
+  height: number;
+};
