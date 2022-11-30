@@ -1,0 +1,84 @@
+@mixin for-tablet-up {
+  @media screen and (max-width: 1439px) {
+    @content;
+  }
+}
+
+.dropArea {
+  &__dropWindow {
+    width: 800px;
+    height: 876px;
+    /* primary/white */
+    background: #ffffff;
+    /* secondary/gray */
+    border: 1px dashed #9c9c9c;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    pointer-events: none;
+
+    &_dark {
+      /* secondary/black */
+      background: #1a1818;
+      /* primary/dark gray */
+      border: 1px dashed #575757;
+    }
+
+    @include for-tablet-up {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__image {
+    opacity: 0.2;
+
+    &_dark {
+      opacity: 0.1;
+    }
+  }
+
+  &__text {
+    /* Paragraph base/light 16 */
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 140%;
+    /* or 22px */
+    text-align: center;
+    /* primary/dark gray */
+    color: #575757;
+    margin: 16px 0 20px 0 !important;
+    width: 150px;
+
+    &_dark {
+      /* primary/light gray */
+      color: #dedede;
+    }
+  }
+
+  &__rules {
+    /* Paragraph small/light 12 */
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 140%;
+    /* identical to box height, or 17px */
+    /* secondary/gray */
+    color: #9c9c9c;
+
+    &_dark {
+      /* primary/dark gray */
+      color: #575757;
+    }
+  }
+}

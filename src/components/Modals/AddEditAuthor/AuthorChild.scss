@@ -116,6 +116,10 @@
       /* primary/light gray */
       color: #dedede;
     }
+
+    @include for-tablet-up {
+      display: none;
+    }
   }
 
   &__inputFields {
