@@ -15,8 +15,8 @@ const App: FC = () => {
   const { chosenTheme } = useAppSelector(({ currTheme }) => currTheme);
   const toggle = () => {
     setTheme(theme === "dark" ? "light" : "dark");
-    if (theme === "dark") setCookie("dark", true);
-    if (theme !== "dark") setCookie("dark", false);
+    if (theme === "dark") setCookie("dark", true, { path: "/" });
+    if (theme !== "dark") setCookie("dark", false, { path: "/" });
   };
   const providerProps = () => ({ theme, toggle });
 
