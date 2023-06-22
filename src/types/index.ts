@@ -77,8 +77,6 @@ export type TAuthors = {
     yearOfCreation: string;
     image: { _id: string; src: string; original: string };
   };
-
-  isDarkTheme?: boolean;
 };
 
 export type Size = {

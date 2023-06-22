@@ -1,16 +1,25 @@
-import { FC, useContext } from "react";
-import type { TTheme } from "../../types";
-import { useAppSelector } from "../../hooks/useReduxHooks";
+import { FC, useContext, useEffect } from "react";
+
+import { useAppSelector, useAppDispatch } from "../../hooks/useReduxHooks";
 import { CardGrid } from "../../ui/CardGrid";
+import { fetchAuthors } from "../../redux/thunk/fetchDataThunk";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { AddArtistButton } from "../../components/AddArtistButton";
 import { ThemeContext } from "../../context";
+import type { TTheme } from "../../types";
 import "./Main.scss";
 
 const Main: FC = () => {
+  const dispatch = useAppDispatch();
   const { toggle } = useContext<TTheme>(ThemeContext);
+  const { dataAuthors } = useAppSelector(({ data }) => data);
   const { chosenTheme } = useAppSelector(({ currTheme }) => currTheme);
+
+  useEffect(() => {
+    dispatch(fetchAuthors());
+  }, [dispatch]);
+
   return (
     <div className="main-wrapper">
       <Header
@@ -23,7 +32,10 @@ const Main: FC = () => {
           isAuthorized={false}
           isDarkTheme={chosenTheme.dark === "false" ? true : false}
         />
-        <CardGrid isDarkTheme={chosenTheme.dark === "false" ? true : false} />
+        <CardGrid
+          arr={dataAuthors}
+          isDarkTheme={chosenTheme.dark === "false" ? true : false}
+        />
       </main>
       <div className="main-wrapper__footer">
         <Footer isDarkTheme={chosenTheme.dark === "false" ? true : false} />

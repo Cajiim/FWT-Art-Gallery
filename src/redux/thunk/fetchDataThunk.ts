@@ -9,6 +9,8 @@ export const fetchAuthors = createAsyncThunk(
       const response = await getAuthors();
       const data: TAuthors = await response.data;
       const totalCount = response.headers["x-total-count"];
+      console.log(data, "data");
+
       return { data, totalCount };
     } catch (error: unknown) {
       if (error instanceof Error) {

@@ -1,25 +1,29 @@
 import { FC } from "react";
+
+import { baseURL } from "../../api";
 import type { TAuthors } from "../../types";
 import { Card } from "../../components/Card";
-import { arr } from "../../data";
 import "./CardGrid.scss";
 
-type TCardGrid = TAuthors & {
-  isAuthorized?: boolean;
-  isMainPage?: boolean;
+type TCardGrid = {
+  arr: TAuthors[];
+  isDarkTheme: boolean;
 };
 
-const CardGrid: FC<TCardGrid> = ({ isDarkTheme }) => {
+const CardGrid: FC<TCardGrid> = ({ arr, isDarkTheme }) => {
   return (
-    <>
-      <ul className="cardGrid">
-        {arr.map(({ id, name, img, year }) => (
-          <li className="cardGrid__item" key={id}>
-            <Card name={name} img={img} year={year} isDarkTheme={isDarkTheme} />
-          </li>
-        ))}
-      </ul>
-    </>
+    <ul className="cardGrid">
+      {arr.map(({ _id, name, mainPainting, yearsOfLife }) => (
+        <li className="cardGrid__item" key={_id}>
+          <Card
+            name={name}
+            img={`${baseURL}${mainPainting?.image.src}`}
+            year={yearsOfLife}
+            isDarkTheme={isDarkTheme}
+          />
+        </li>
+      ))}
+    </ul>
   );
 };
 

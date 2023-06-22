@@ -40,6 +40,7 @@ const PaintingChild = forwardRef<TRef, TPaintingChild>(
     ref: LegacyRef<HTMLInputElement>
   ) => {
     const widthWindow: Size = useWindowSize();
+
     return (
       <div
         className={cn("paintingChild", {

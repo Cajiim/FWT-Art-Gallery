@@ -23,6 +23,7 @@ const DragAndDrop: FC<TDragAndDrop> = ({ isDarkTheme }) => {
   const handlPick = () => {
     ref.current?.click();
   };
+
   return (
     <div
       className={cn("dragAndDrop", {

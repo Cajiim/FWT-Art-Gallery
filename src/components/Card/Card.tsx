@@ -11,46 +11,30 @@ type TCard = {
   isDarkTheme?: boolean;
 };
 
-const Card: FC<TCard> = ({ name, img, year, isDarkTheme }) => {
-  return (
-    <div className="card">
-      <div
-        className={cn("card__curtain", {
-          card__curtain_dark: isDarkTheme,
-        })}
-      >
-        <span
-          className={cn("card__band", {
-            card__band_dark: isDarkTheme,
-          })}
-        />
-        <div className="card__text">
-          <h4
-            className={cn("card__name", {
-              card__name_dark: isDarkTheme,
-            })}
-          >
-            {name}
-          </h4>
-          <p
-            className={cn("card__year", {
-              card__year_dark: isDarkTheme,
-            })}
-          >
-            {year}
-          </p>
-        </div>
-        <div
-          className={cn("card__rectangle", {
-            card__rectangle_dark: isDarkTheme,
-          })}
-        >
-          <CardArrow className="card__arrow" />
-        </div>
+const Card: FC<TCard> = ({ name, img, year, isDarkTheme }) => (
+  <div className="card">
+    <div
+      className={cn("card__curtain", {
+        card__curtain_dark: isDarkTheme,
+      })}
+    >
+      <span className={cn("card__band", { card__band_dark: isDarkTheme })} />
+      <div className="card__text">
+        <h4 className={cn("card__name", { card__name_dark: isDarkTheme })}>
+          {name}
+        </h4>
+        <p className={cn("card__year", { card__year_dark: isDarkTheme })}>
+          {year}
+        </p>
       </div>
-      <img src={img} alt="painting" className="card__painting" />
+      <div
+        className={cn("card__rectangle", { card__rectangle_dark: isDarkTheme })}
+      >
+        <CardArrow className="card__arrow" />
+      </div>
     </div>
-  );
-};
+    <img src={img} alt="painting" className="card__painting" />
+  </div>
+);
 
 export default Card;
